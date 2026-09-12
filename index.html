@@ -1,0 +1,324 @@
+<div class="app">    <header class="topbar">  
+    <div class="brand">  
+      <div class="brand-icon">N</div>  <div>  
+    <h1>NDEBE TRADE PRO</h1>  
+    <p>Triple Digit Differ // Tick Tester</p>  
+  </div>  
+</div>  
+
+<div class="system-status">  
+  <span id="systemDot" class="status-dot offline"></span>  
+  <span id="systemStatus">SYSTEM OFFLINE</span>  
+</div>
+
+  </header>    <section class="connection-panel panel">  <div class="section-heading">  
+  <span class="section-number">01</span>  
+  <div>  
+    <h2>DERIV CONNECTION</h2>  
+    <p>Connect your account for balance and account information.</p>  
+  </div>  
+</div>  
+
+<div class="connection-grid">  
+
+  <div class="input-group">  
+    <label>DERIV APP ID</label>  
+    <input  
+      id="appIdInput"  
+      type="text"  
+      placeholder="Enter your Deriv App ID"  
+    />  
+  </div>  
+
+  <div class="input-group">  
+    <label>PERSONAL ACCESS TOKEN</label>  
+    <input  
+      id="patInput"  
+      type="password"  
+      placeholder="Enter Demo PAT token"  
+    />  
+  </div>  
+
+  <button id="connectBtn" class="primary-btn">  
+    CONNECT ACCOUNT  
+  </button>  
+
+</div>  
+
+<div class="account-row">  
+
+  <div class="account-box">  
+    <span class="small-label">SELECTED ACCOUNT</span>  
+    <select id="accountSelect" disabled>  
+      <option>No account connected</option>  
+    </select>  
+  </div>  
+
+  <div class="account-box">  
+    <span class="small-label">ACCOUNT TYPE</span>  
+    <strong id="accountType">NOT CONNECTED</strong>  
+  </div>  
+
+  <div class="account-box">  
+    <span class="small-label">BALANCE</span>  
+    <strong id="accountBalance">—</strong>  
+  </div>  
+
+  <div class="account-box">  
+    <span class="small-label">CONNECTION</span>  
+    <strong id="accountConnection">DISCONNECTED</strong>  
+  </div>  
+
+</div>  
+
+<div id="connectionMessage" class="message">  
+  Enter your App ID and PAT to connect.  
+</div>
+
+  </section>    <section class="control-panel panel">  <div class="section-heading">  
+  <span class="section-number">02</span>  
+  <div>  
+    <h2>TEST ENGINE CONTROLS</h2>  
+    <p>Automatic market scanning and paper-trade configuration.</p>  
+  </div>  
+</div>  
+
+<div class="controls-grid">  
+
+  <div class="input-group">  
+    <label>ACTIVE STRATEGY</label>  
+    <select id="strategySelect">  
+      <option value="triple-differ">  
+        Triple Digit Differ  
+      </option>  
+    </select>  
+  </div>  
+
+  <div class="input-group">  
+    <label>PAPER TRADE AMOUNT</label>  
+    <input  
+      id="stakeInput"  
+      type="number"  
+      value="1"  
+      min="0.35"  
+      step="0.01"  
+    />  
+  </div>  
+
+  <div class="engine-buttons">  
+    <button id="startBtn" class="start-btn">  
+      ▶ START PAPER ENGINE  
+    </button>  
+
+    <button id="stopBtn" class="stop-btn" disabled>  
+      ■ STOP ENGINE  
+    </button>  
+  </div>  
+
+</div>  
+
+<div class="safety-note">  
+  <strong>SIMULATION MODE:</strong>  
+  This tester reads live public ticks and calculates simulated results.  
+  It does not submit trades to Deriv.  
+</div>
+
+  </section>    <section class="tracker-panel panel">  <div class="section-heading">  
+  <span class="section-number">03</span>  
+  <div>  
+    <h2>LIVE STRATEGY TRACKER</h2>  
+    <p>Real-time status of the pattern detector and market lock.</p>  
+  </div>  
+</div>  
+
+<div class="tracker-grid">  
+
+  <div class="tracker-card main-tracker">  
+    <span class="small-label">ENGINE STATUS</span>  
+    <strong id="trackerStatus">WAITING TO START</strong>  
+    <p id="trackerDescription">  
+      Start the paper engine to begin scanning all markets.  
+    </p>  
+  </div>  
+
+  <div class="tracker-card">  
+    <span class="small-label">LOCKED MARKET</span>  
+    <strong id="lockedMarket">NONE</strong>  
+  </div>  
+
+  <div class="tracker-card">  
+    <span class="small-label">PATTERN</span>  
+    <strong id="lockedPattern">—</strong>  
+  </div>  
+
+  <div class="tracker-card">  
+    <span class="small-label">ENTRY DIGIT</span>  
+    <strong id="entryDigit">—</strong>  
+  </div>  
+
+  <div class="tracker-card">  
+    <span class="small-label">NEXT ACTION</span>  
+    <strong id="nextAction">SCAN MARKETS</strong>  
+  </div>  
+
+</div>
+
+  </section>    <section class="strategy-panel panel">  <div class="section-heading">  
+  <span class="section-number">04</span>  
+  <div>  
+    <h2>STRATEGY ENGINE</h2>  
+    <p>Current strategy logic and operating conditions.</p>  
+  </div>  
+</div>  
+
+<div class="strategy-layout">  
+
+  <div class="strategy-description">  
+    <div class="strategy-title-row">  
+      <h3>TRIPLE DIGIT DIFFER</h3>  
+      <span class="strategy-badge">ACTIVE</span>  
+    </div>  
+
+    <p>  
+      The engine searches for three consecutive identical final digits  
+      on any monitored market.  
+    </p>  
+
+    <div class="rule-list">  
+      <div>  
+        <span>01</span>  
+        Detect three identical consecutive final digits.  
+      </div>  
+
+      <div>  
+        <span>02</span>  
+        Lock the first market that produces the pattern.  
+      </div>  
+
+      <div>  
+        <span>03</span>  
+        Use the repeated digit as the simulated entry digit.  
+      </div>  
+
+      <div>  
+        <span>04</span>  
+        Wait for the next tick on that same market.  
+      </div>  
+
+      <div>  
+        <span>05</span>  
+        Different fourth digit = simulated WIN.  
+      </div>  
+
+      <div>  
+        <span>06</span>  
+        Same fourth digit = simulated LOSS.  
+      </div>  
+    </div>  
+  </div>  
+
+  <div class="strategy-metrics">  
+    <div class="metric-box">  
+      <span class="small-label">MARKETS SCANNED</span>  
+      <strong id="marketsScanned">0</strong>  
+    </div>  
+
+    <div class="metric-box">  
+      <span class="small-label">TICKS RECEIVED</span>  
+      <strong id="ticksReceived">0</strong>  
+    </div>  
+
+    <div class="metric-box">  
+      <span class="small-label">SIGNALS FOUND</span>  
+      <strong id="signalsFound">0</strong>  
+    </div>  
+
+    <div class="metric-box">  
+      <span class="small-label">ENGINE RUNTIME</span>  
+      <strong id="engineRuntime">00:00:00</strong>  
+    </div>  
+  </div>  
+
+</div>
+
+  </section>    <section class="stats-panel panel">  <div class="section-heading">  
+  <span class="section-number">05</span>  
+  <div>  
+    <h2>PERFORMANCE SUMMARY</h2>  
+    <p>Paper-trading results generated by the tester.</p>  
+  </div>  
+</div>  
+
+<div class="stats-grid">  
+
+  <div class="stat-card">  
+    <span class="small-label">PENDING</span>  
+    <strong id="pendingCount">0</strong>  
+  </div>  
+
+  <div class="stat-card">  
+    <span class="small-label">OPENED</span>  
+    <strong id="openedCount">0</strong>  
+  </div>  
+
+  <div class="stat-card">  
+    <span class="small-label">CLOSED</span>  
+    <strong id="closedCount">0</strong>  
+  </div>  
+
+  <div class="stat-card win-stat">  
+    <span class="small-label">WINS</span>  
+    <strong id="winsCount">0</strong>  
+  </div>  
+
+  <div class="stat-card loss-stat">  
+    <span class="small-label">LOSSES</span>  
+    <strong id="lossesCount">0</strong>  
+  </div>  
+
+  <div class="stat-card">  
+    <span class="small-label">TOTAL STAKE</span>  
+    <strong id="totalStake">0.00</strong>  
+  </div>  
+
+  <div class="stat-card win-stat">  
+    <span class="small-label">WIN AMOUNT</span>  
+    <strong id="totalWinAmount">0.00</strong>  
+  </div>  
+
+  <div class="stat-card loss-stat">  
+    <span class="small-label">LOSS AMOUNT</span>  
+    <strong id="totalLossAmount">0.00</strong>  
+  </div>  
+
+</div>
+
+  </section>    <section class="channel-panel panel">  <div class="section-heading">  
+  <span class="section-number">06</span>  
+  <div>  
+    <h2>TRADING CHANNEL</h2>  
+    <p>Detailed paper-trade activity and simulated outcomes.</p>  
+  </div>  
+</div>  
+
+<div id="tradingChannel" class="trading-channel">  
+  <div class="empty-state">  
+    No paper trades yet. Start the engine and wait for a valid pattern.  
+  </div>  
+</div>
+
+  </section>    <section class="markets-panel panel">  <div class="section-heading">  
+  <span class="section-number">07</span>  
+  <div>  
+    <h2>LIVE MARKET FEED</h2>  
+    <p>All configured markets are monitored automatically.</p>  
+  </div>  
+</div>  
+
+<div id="marketFeed" class="market-feed"></div>
+
+  </section>    <footer class="footer">  
+    <span>NDEBE TRADE PRO</span>  
+    <span>TRIPLE DIGIT DIFFER TEST ENVIRONMENT</span>  
+    <span id="footerTime">—</span>  
+  </footer>  </div>
