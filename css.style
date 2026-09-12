@@ -1,0 +1,693 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+--bg: #050914;
+--panel: #0b1220;
+--panel-light: #101b2e;
+--border: #1c3850;
+--cyan: #00e5ff;
+--blue: #2684ff;
+--green: #00f5a0;
+--red: #ff426d;
+--yellow: #ffd166;
+--text: #e9f5ff;
+--muted: #7891a8;
+--shadow: 0 0 25px rgba(0, 229, 255, 0.07);
+}
+
+{
+box-sizing: border-box;
+}
+
+
+body {
+margin: 0;
+min-height: 100vh;
+background:
+radial-gradient(circle at top right, rgba(0, 229, 255, 0.09), transparent 35%),
+radial-gradient(circle at bottom left, rgba(38, 132, 255, 0.08), transparent 30%),
+var(--bg);
+color: var(--text);
+font-family: "Rajdhani", sans-serif;
+}
+
+button,
+input,
+select {
+font: inherit;
+}
+
+button {
+cursor: pointer;
+}
+
+.app {
+width: min(1500px, 96%);
+margin: 0 auto;
+padding: 24px 0 40px;
+}
+
+.topbar {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+margin-bottom: 24px;
+padding: 20px 24px;
+border: 1px solid var(--border);
+background: rgba(11, 18, 32, 0.92);
+box-shadow: var(--shadow);
+position: relative;
+overflow: hidden;
+}
+
+.topbar::before {
+content: "";
+position: absolute;
+inset: 0;
+pointer-events: none;
+background: linear-gradient(
+90deg,
+transparent,
+rgba(0, 229, 255, 0.05),
+transparent
+);
+animation: scanline 7s linear infinite;
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.brand-icon {
+display: grid;
+place-items: center;
+width: 55px;
+height: 55px;
+border: 1px solid var(--cyan);
+color: var(--cyan);
+font-family: "Orbitron", sans-serif;
+font-size: 28px;
+font-weight: 800;
+box-shadow: 0 0 18px rgba(0, 229, 255, 0.2);
+}
+
+h1,
+h2,
+h3,
+p {
+margin: 0;
+}
+
+h1 {
+font-family: "Orbitron", sans-serif;
+font-size: clamp(18px, 3vw, 29px);
+letter-spacing: 2px;
+}
+
+.brand p {
+color: var(--muted);
+letter-spacing: 2px;
+margin-top: 5px;
+}
+
+.system-status {
+display: flex;
+align-items: center;
+gap: 10px;
+color: var(--muted);
+font-family: "Orbitron", sans-serif;
+font-size: 12px;
+letter-spacing: 1px;
+}
+
+.status-dot {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: var(--red);
+box-shadow: 0 0 12px var(--red);
+}
+
+.status-dot.online {
+background: var(--green);
+box-shadow: 0 0 12px var(--green);
+}
+
+.status-dot.warning {
+background: var(--yellow);
+box-shadow: 0 0 12px var(--yellow);
+}
+
+.panel {
+margin-bottom: 20px;
+padding: 23px;
+background: linear-gradient(
+145deg,
+rgba(16, 27, 46, 0.96),
+rgba(7, 14, 27, 0.96)
+);
+border: 1px solid var(--border);
+box-shadow: var(--shadow);
+position: relative;
+}
+
+.panel::after {
+content: "";
+position: absolute;
+top: 0;
+right: 0;
+width: 80px;
+height: 2px;
+background: var(--cyan);
+box-shadow: 0 0 15px var(--cyan);
+}
+
+.section-heading {
+display: flex;
+align-items: flex-start;
+gap: 13px;
+margin-bottom: 22px;
+}
+
+.section-number {
+color: var(--cyan);
+font-family: "Orbitron", sans-serif;
+font-size: 13px;
+border: 1px solid var(--border);
+padding: 8px 9px;
+}
+
+.section-heading h2 {
+font-family: "Orbitron", sans-serif;
+font-size: 16px;
+letter-spacing: 1px;
+}
+
+.section-heading p {
+color: var(--muted);
+margin-top: 5px;
+font-size: 15px;
+}
+
+.connection-grid,
+.controls-grid {
+display: grid;
+grid-template-columns: 1fr 1fr auto;
+gap: 15px;
+align-items: end;
+}
+
+.input-group {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+label,
+.small-label {
+color: var(--muted);
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 1.5px;
+}
+
+input,
+select {
+width: 100%;
+padding: 13px 14px;
+color: var(--text);
+background: #060d19;
+border: 1px solid var(--border);
+outline: none;
+border-radius: 0;
+}
+
+input:focus,
+select:focus {
+border-color: var(--cyan);
+box-shadow: 0 0 12px rgba(0, 229, 255, 0.1);
+}
+
+.primary-btn,
+.start-btn,
+.stop-btn {
+min-height: 47px;
+padding: 0 18px;
+border: 1px solid var(--cyan);
+background: rgba(0, 229, 255, 0.08);
+color: var(--cyan);
+font-family: "Orbitron", sans-serif;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 1px;
+transition: 0.2s ease;
+}
+
+.primary-btn:hover,
+.start-btn:hover {
+background: var(--cyan);
+color: #031019;
+box-shadow: 0 0 22px rgba(0, 229, 255, 0.3);
+}
+
+.stop-btn {
+color: var(--red);
+border-color: var(--red);
+background: rgba(255, 66, 109, 0.07);
+}
+
+.stop-btn:hover:not(:disabled) {
+background: var(--red);
+color: white;
+}
+
+button:disabled {
+opacity: 0.35;
+cursor: not-allowed;
+}
+
+.account-row {
+display: grid;
+grid-template-columns: 1.5fr 1fr 1fr 1fr;
+gap: 12px;
+margin-top: 18px;
+}
+
+.account-box,
+.tracker-card,
+.metric-box,
+.stat-card {
+background: rgba(4, 11, 22, 0.8);
+border: 1px solid var(--border);
+padding: 15px;
+min-height: 75px;
+}
+
+.account-box strong,
+.tracker-card strong,
+.metric-box strong,
+.stat-card strong {
+display: block;
+margin-top: 8px;
+font-family: "Orbitron", sans-serif;
+font-size: 17px;
+color: var(--text);
+overflow-wrap: anywhere;
+}
+
+.message {
+margin-top: 15px;
+color: var(--muted);
+font-size: 14px;
+}
+
+.engine-buttons {
+display: flex;
+gap: 10px;
+}
+
+.safety-note {
+margin-top: 17px;
+padding: 13px;
+border-left: 3px solid var(--yellow);
+background: rgba(255, 209, 102, 0.06);
+color: #c7d2df;
+font-size: 14px;
+}
+
+.safety-note strong {
+color: var(--yellow);
+}
+
+.tracker-grid {
+display: grid;
+grid-template-columns: 2fr repeat(4, 1fr);
+gap: 12px;
+}
+
+.main-tracker {
+border-color: var(--cyan);
+}
+
+.main-tracker strong {
+color: var(--cyan);
+}
+
+.tracker-card p {
+color: var(--muted);
+margin-top: 9px;
+font-size: 14px;
+}
+
+.strategy-layout {
+display: grid;
+grid-template-columns: 1.5fr 1fr;
+gap: 20px;
+}
+
+.strategy-description {
+border: 1px solid var(--border);
+padding: 18px;
+background: rgba(4, 11, 22, 0.55);
+}
+
+.strategy-title-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+margin-bottom: 13px;
+}
+
+.strategy-title-row h3 {
+font-family: "Orbitron", sans-serif;
+font-size: 16px;
+color: var(--cyan);
+}
+
+.strategy-badge {
+color: var(--green);
+border: 1px solid var(--green);
+padding: 5px 8px;
+font-size: 10px;
+letter-spacing: 1px;
+}
+
+.strategy-description > p {
+color: var(--muted);
+line-height: 1.5;
+}
+
+.rule-list {
+display: grid;
+gap: 9px;
+margin-top: 18px;
+}
+
+.rule-list div {
+display: flex;
+align-items: flex-start;
+gap: 12px;
+color: #c5d7e7;
+font-size: 14px;
+}
+
+.rule-list span {
+color: var(--cyan);
+font-family: "Orbitron", sans-serif;
+font-size: 11px;
+}
+
+.strategy-metrics {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+}
+
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+gap: 10px;
+}
+
+.stat-card strong {
+font-size: 20px;
+}
+
+.win-stat {
+border-color: rgba(0, 245, 160, 0.35);
+}
+
+.win-stat strong {
+color: var(--green);
+}
+
+.loss-stat {
+border-color: rgba(255, 66, 109, 0.35);
+}
+
+.loss-stat strong {
+color: var(--red);
+}
+
+.trading-channel {
+display: grid;
+gap: 13px;
+}
+
+.empty-state {
+padding: 28px;
+border: 1px dashed var(--border);
+color: var(--muted);
+text-align: center;
+}
+
+.trade-card {
+border: 1px solid var(--border);
+background: rgba(4, 11, 22, 0.8);
+padding: 17px;
+animation: cardIn 0.25s ease;
+}
+
+.trade-card.trade-win {
+border-color: rgba(0, 245, 160, 0.5);
+}
+
+.trade-card.trade-loss {
+border-color: rgba(255, 66, 109, 0.5);
+}
+
+.trade-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+margin-bottom: 15px;
+}
+
+.trade-title {
+font-family: "Orbitron", sans-serif;
+color: var(--cyan);
+font-size: 14px;
+}
+
+.trade-id {
+color: var(--muted);
+font-size: 12px;
+margin-top: 5px;
+}
+
+.trade-status {
+padding: 6px 10px;
+font-family: "Orbitron", sans-serif;
+font-size: 10px;
+letter-spacing: 1px;
+border: 1px solid var(--yellow);
+color: var(--yellow);
+}
+
+.trade-status.win {
+color: var(--green);
+border-color: var(--green);
+}
+
+.trade-status.loss {
+color: var(--red);
+border-color: var(--red);
+}
+
+.trade-details {
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+gap: 10px;
+}
+
+.trade-detail {
+padding: 10px;
+border: 1px solid rgba(28, 56, 80, 0.65);
+background: rgba(0, 0, 0, 0.12);
+}
+
+.trade-detail span {
+display: block;
+color: var(--muted);
+font-size: 10px;
+letter-spacing: 1px;
+}
+
+.trade-detail strong {
+display: block;
+margin-top: 6px;
+font-size: 14px;
+overflow-wrap: anywhere;
+}
+
+.market-feed {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+}
+
+.market-card {
+padding: 15px;
+border: 1px solid var(--border);
+background: rgba(4, 11, 22, 0.8);
+}
+
+.market-card.locked {
+border-color: var(--yellow);
+box-shadow: 0 0 16px rgba(255, 209, 102, 0.08);
+}
+
+.market-card-header {
+display: flex;
+justify-content: space-between;
+gap: 10px;
+align-items: center;
+}
+
+.market-name {
+color: var(--cyan);
+font-family: "Orbitron", sans-serif;
+font-size: 13px;
+}
+
+.market-state {
+color: var(--muted);
+font-size: 10px;
+letter-spacing: 1px;
+}
+
+.market-quote {
+margin-top: 15px;
+font-family: "Orbitron", sans-serif;
+font-size: 23px;
+}
+
+.market-bottom {
+display: flex;
+justify-content: space-between;
+gap: 10px;
+margin-top: 10px;
+color: var(--muted);
+font-size: 13px;
+}
+
+.market-digit {
+color: var(--yellow);
+font-family: "Orbitron", sans-serif;
+}
+
+.footer {
+display: flex;
+justify-content: space-between;
+gap: 15px;
+color: var(--muted);
+font-size: 11px;
+letter-spacing: 1px;
+padding: 10px 2px;
+}
+
+@keyframes scanline {
+from {
+transform: translateX(-100%);
+}
+
+to {
+transform: translateX(100%);
+}
+}
+
+@keyframes cardIn {
+from {
+opacity: 0;
+transform: translateY(5px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@media (max-width: 1100px) {
+.connection-grid,
+.controls-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+.primary-btn,
+.engine-buttons {
+grid-column: 1 / -1;
+}
+
+.account-row {
+grid-template-columns: 1fr 1fr;
+}
+
+.tracker-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+.main-tracker {
+grid-column: 1 / -1;
+}
+
+.strategy-layout {
+grid-template-columns: 1fr;
+}
+
+.stats-grid {
+grid-template-columns: repeat(4, 1fr);
+}
+
+.trade-details {
+grid-template-columns: repeat(3, 1fr);
+}
+
+.market-feed {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (max-width: 650px) {
+.app {
+width: 94%;
+padding-top: 12px;
+}
+
+.topbar {
+align-items: flex-start;
+flex-direction: column;
+}
+
+.connection-grid,
+.controls-grid,
+.account-row,
+.tracker-grid,
+.strategy-metrics,
+.stats-grid,
+.market-feed {
+grid-template-columns: 1fr;
+}
+
+.primary-btn,
+.engine-buttons {
+grid-column: auto;
+}
+
+.engine-buttons {
+flex-direction: column;
+}
+
+.trade-details {
+grid-template-columns: 1fr 1fr;
+}
+
+.footer {
+flex-direction: column;
+}
+}
