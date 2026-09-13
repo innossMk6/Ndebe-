@@ -2,55 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="NDEBE TRADE PRO - High Frequency Triple Digit Differ Execution Engine">
   <title>NDEBE TRADE PRO // DEMO ENGINE</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #030712;
-      --panel: #0b1329;
-      --panel-border: #132742;
-      --panel-glow: rgba(0, 242, 254, 0.03);
+      --bg: #090614;
+      --card-bg: #110c24;
+      --input-bg: #181233;
+      --border-color: rgba(255, 255, 255, 0.08);
       
       --cyan: #00f2fe;
-      --cyan-glow: rgba(0, 242, 254, 0.25);
-      --blue: #4f46e5;
-      --green: #00ff88;
-      --green-glow: rgba(0, 255, 136, 0.2);
-      --red: #ff2a5f;
-      --red-glow: rgba(255, 42, 95, 0.2);
-      --amber: #ffb703;
+      --purple: #a855f7;
+      --magenta: #e84393;
+      --btn-gradient: linear-gradient(135deg, #a855f7 0%, #e84393 100%);
+      --btn-cyan-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+      
+      --green: #00e676;
+      --red: #ff3860;
+      --yellow: #ffb703;
 
-      --text-main: #f1f5f9;
-      --text-muted: #64748b;
-      --text-sub: #94a3b8;
+      --text-main: #ffffff;
+      --text-muted: #7e7a9c;
+      --text-sub: #a29bfe;
 
-      --font-display: 'Orbitron', sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    body {
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
       background-color: var(--bg);
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(0, 242, 254, 0.08), transparent 45%),
-        linear-gradient(to bottom, rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 1));
       color: var(--text-main);
-      font-family: var(--font-mono);
-      min-height: 100vh;
-      padding-bottom: 40px;
+      font-family: var(--font-sans);
+      -webkit-tap-highlight-color: transparent;
     }
 
     .app-container {
-      max-width: 1600px;
+      width: 100%;
+      max-width: 600px;
       margin: 0 auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* ============ LOCK SCREEN ============ */
+    .lock-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 20px;
+      background: var(--bg);
+    }
+
+    .lock-card {
+      width: 100%;
+      max-width: 380px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 36px 24px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .lock-card.shake { animation: lock-shake 0.35s ease; }
+
+    @keyframes lock-shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-8px); }
+      75% { transform: translateX(8px); }
+    }
+
+    .lock-logo {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 16px;
+      border-radius: 16px;
+      background: var(--btn-gradient);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .lock-card h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple), var(--magenta));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lock-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .lock-input {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px 16px;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      text-align: center;
+      letter-spacing: 2px;
+      outline: none;
+      margin-bottom: 16px;
+      transition: border-color 0.2s ease;
+    }
+
+    .lock-input:focus {
+      border-color: var(--purple);
+    }
+
+    .lock-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: var(--btn-gradient);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: opacity 0.2s ease;
+    }
+
+    .lock-btn:active { opacity: 0.8; }
+
+    .lock-error {
+      font-size: 12px;
+      color: var(--red);
+      margin-top: 14px;
+      min-height: 14px;
+    }
+
+    .app-root { display: none; }
+    .app-root.visible { display: block; animation: app-reveal 0.3s ease; }
+
+    @keyframes app-reveal {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* HEADER HUD */
@@ -58,203 +176,158 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      padding: 16px 24px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .topbar::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .brand-logo {
-      width: 46px;
-      height: 46px;
-      background: rgba(0, 242, 254, 0.1);
-      border: 1px solid var(--cyan);
-      box-shadow: 0 0 15px var(--cyan-glow);
-      display: grid;
-      place-items: center;
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 24px;
-      color: var(--cyan);
-      border-radius: 6px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 16px 20px;
+      border-radius: 18px;
     }
 
     .brand-title h1 {
-      font-family: var(--font-display);
-      font-size: 20px;
-      letter-spacing: 2px;
-      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--cyan);
+      letter-spacing: 0.5px;
     }
 
     .brand-title p {
       font-size: 11px;
       color: var(--text-muted);
-      letter-spacing: 1px;
       margin-top: 2px;
     }
 
     .system-status {
       display: flex;
       align-items: center;
-      gap: 12px;
-      background: rgba(3, 7, 18, 0.6);
-      padding: 8px 16px;
+      gap: 8px;
+      background: rgba(0,0,0,0.3);
+      padding: 6px 12px;
       border-radius: 20px;
-      border: 1px solid var(--panel-border);
+      border: 1px solid var(--border-color);
     }
 
     .status-dot {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--red);
-      box-shadow: 0 0 10px var(--red);
     }
 
-    .status-dot.online { background: var(--green); box-shadow: 0 0 10px var(--green); }
-    .status-dot.warning { background: var(--amber); box-shadow: 0 0 10px var(--amber); }
+    .status-dot.online { background: var(--green); box-shadow: 0 0 8px var(--green); }
+    .status-dot.warning { background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
 
     .status-text {
-      font-family: var(--font-display);
-      font-size: 11px;
+      font-size: 10px;
+      font-weight: 700;
       letter-spacing: 1px;
     }
 
-    /* GRID LAYOUT */
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: 380px 1fr;
-      gap: 20px;
-    }
-
+    /* CARD PANELS */
     .panel {
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
       padding: 20px;
-      margin-bottom: 20px;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .panel-header {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 18px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      align-items: flex-start;
+      gap: 10px;
     }
 
-    .panel-title {
-      font-family: var(--font-display);
-      font-size: 13px;
-      letter-spacing: 1.5px;
+    .panel-header-icon {
+      font-size: 18px;
+    }
+
+    .panel-header-text h2 {
+      font-size: 15px;
+      font-weight: 700;
       color: var(--cyan);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
-    .panel-badge {
-      font-size: 10px;
-      padding: 3px 6px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 4px;
+    .panel-header-text p {
+      font-size: 11px;
       color: var(--text-muted);
+      margin-top: 2px;
     }
 
     /* INPUT CONTROLS */
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
     .input-group {
-      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
     .input-group label {
-      display: block;
       font-size: 10px;
-      letter-spacing: 1px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
       color: var(--text-muted);
-      margin-bottom: 6px;
       text-transform: uppercase;
     }
 
     .input-control, select.input-control {
       width: 100%;
-      background: #050b14;
-      border: 1px solid var(--panel-border);
-      border-radius: 4px;
-      padding: 10px 12px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 14px;
       color: var(--text-main);
-      font-family: var(--font-mono);
-      font-size: 12px;
+      font-family: var(--font-sans);
+      font-size: 13px;
       outline: none;
-      transition: all 0.2s;
+      transition: border-color 0.2s ease;
     }
 
     .input-control:focus {
-      border-color: var(--cyan);
-      box-shadow: 0 0 10px var(--cyan-glow);
+      border-color: var(--purple);
     }
 
     /* BUTTONS */
     .btn {
       width: 100%;
-      padding: 12px;
-      border-radius: 4px;
-      border: 1px solid var(--cyan);
-      background: rgba(0, 242, 254, 0.08);
-      color: var(--cyan);
-      font-family: var(--font-display);
-      font-size: 11px;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      background: var(--btn-cyan-gradient);
+      color: #fff;
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: 1px;
       cursor: pointer;
-      transition: all 0.2s;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 8px;
+      transition: opacity 0.2s ease;
     }
 
-    .btn:hover:not(:disabled) {
-      background: var(--cyan);
-      color: #000;
-      box-shadow: 0 0 20px var(--cyan-glow);
-    }
+    .btn:active:not(:disabled) { opacity: 0.8; }
 
     .btn:disabled {
       opacity: 0.3;
       cursor: not-allowed;
-      border-color: var(--panel-border);
+      background: var(--input-bg);
+      color: var(--text-muted);
+    }
+
+    .btn-gradient {
+      background: var(--btn-gradient);
     }
 
     .btn-stop {
-      border-color: var(--red);
-      background: rgba(255, 42, 95, 0.08);
-      color: var(--red);
-    }
-
-    .btn-stop:hover:not(:disabled) {
-      background: var(--red);
-      color: #fff;
-      box-shadow: 0 0 20px var(--red-glow);
+      background: linear-gradient(135deg, #ff3860 0%, #d63031 100%);
     }
 
     .button-group {
@@ -263,30 +336,29 @@
       gap: 10px;
     }
 
-    /* ACCOUNT METRICS */
+    /* METRICS METRIC CARDS */
     .metrics-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
-      margin-top: 14px;
     }
 
     .metric-card {
-      background: #050b14;
-      border: 1px solid var(--panel-border);
-      padding: 10px 12px;
-      border-radius: 4px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      border-radius: 10px;
     }
 
     .metric-card span {
       font-size: 9px;
       color: var(--text-muted);
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       display: block;
+      text-transform: uppercase;
     }
 
     .metric-card strong {
-      font-family: var(--font-display);
       font-size: 14px;
       color: var(--text-main);
       margin-top: 4px;
@@ -295,171 +367,164 @@
 
     /* LIVE TRACKER HUD */
     .tracker-box {
-      background: #050b14;
-      border: 1px solid var(--cyan);
-      border-radius: 6px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
       padding: 16px;
-      box-shadow: inset 0 0 15px rgba(0, 242, 254, 0.05);
-      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tracker-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--purple);
+      box-shadow: 0 0 10px var(--purple);
     }
 
     .tracker-status {
-      font-family: var(--font-display);
-      font-size: 16px;
-      color: var(--cyan);
-      letter-spacing: 1px;
-      margin-bottom: 4px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-main);
     }
 
     .tracker-desc {
       font-size: 11px;
-      color: var(--text-sub);
-      line-height: 1.4;
+      color: var(--text-muted);
+      margin-top: 2px;
     }
 
-    .tracker-data-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-
-    /* STATS & PERFORMANCE GRID */
+    /* STATS GRID */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 8px;
     }
 
     .stat-box {
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      border-radius: 6px;
-      padding: 14px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 10px 8px;
       text-align: center;
     }
 
-    .stat-box.win { border-color: rgba(0, 255, 136, 0.3); }
     .stat-box.win strong { color: var(--green); }
-
-    .stat-box.loss { border-color: rgba(255, 42, 95, 0.3); }
     .stat-box.loss strong { color: var(--red); }
 
     .stat-box span {
-      font-size: 10px;
+      font-size: 8px;
       color: var(--text-muted);
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       display: block;
+      text-transform: uppercase;
     }
 
     .stat-box strong {
-      font-family: var(--font-display);
-      font-size: 18px;
+      font-size: 14px;
       display: block;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
-    /* TAB REGION */
+    /* TABS & MARKET FEED */
     .tab-bar {
       display: flex;
-      gap: 10px;
-      margin-bottom: 16px;
-      border-bottom: 1px solid var(--panel-border);
+      gap: 6px;
+      border-bottom: 1px solid var(--border-color);
       padding-bottom: 8px;
     }
 
     .tab-btn {
+      flex: 1;
       background: transparent;
       border: none;
       color: var(--text-muted);
-      font-family: var(--font-display);
       font-size: 11px;
-      letter-spacing: 1px;
-      padding: 8px 16px;
+      font-weight: 600;
+      padding: 8px 4px;
       cursor: pointer;
-      border-radius: 4px;
-      transition: all 0.2s;
+      border-radius: 6px;
     }
 
     .tab-btn.active {
-      background: rgba(0, 242, 254, 0.1);
+      background: rgba(168, 85, 247, 0.15);
       color: var(--cyan);
-      border: 1px solid var(--cyan);
     }
 
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    /* MARKET FEED GRID */
     .market-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
     }
 
     .market-card {
-      background: #050b14;
-      border: 1px solid var(--panel-border);
-      border-radius: 6px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
       padding: 12px;
-      transition: all 0.2s;
     }
 
     .market-card.locked {
-      border-color: var(--amber);
-      box-shadow: 0 0 15px rgba(255, 183, 3, 0.15);
+      border-color: var(--yellow);
+      box-shadow: 0 0 10px rgba(255, 183, 3, 0.2);
     }
 
     .market-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .market-name {
-      font-family: var(--font-display);
       font-size: 11px;
+      font-weight: 600;
       color: var(--cyan);
     }
 
     .market-badge {
-      font-size: 9px;
+      font-size: 8px;
       color: var(--text-muted);
     }
 
     .market-quote {
-      font-family: var(--font-display);
-      font-size: 18px;
+      font-family: var(--font-mono);
+      font-size: 15px;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .market-foot {
       display: flex;
       justify-content: space-between;
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-muted);
     }
 
     .market-digit-highlight {
-      color: var(--amber);
+      color: var(--yellow);
       font-weight: 700;
-      font-family: var(--font-display);
     }
 
-    /* TRADING CHANNEL CARDS */
+    /* LOG CARDS */
     .channel-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
+      margin-top: 12px;
     }
 
     .trade-card {
-      background: #050b14;
-      border: 1px solid var(--panel-border);
-      border-radius: 6px;
-      padding: 14px;
+      background: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px;
     }
 
     .trade-card.win { border-color: var(--green); }
@@ -468,21 +533,20 @@
     .trade-card-header {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .trade-title {
-      font-family: var(--font-display);
-      font-size: 12px;
+      font-size: 11px;
+      font-weight: 600;
       color: var(--cyan);
     }
 
     .trade-badge {
-      font-family: var(--font-display);
-      font-size: 10px;
-      padding: 2px 8px;
+      font-size: 9px;
+      padding: 2px 6px;
       border-radius: 4px;
-      border: 1px solid var(--panel-border);
+      border: 1px solid var(--border-color);
     }
 
     .trade-badge.win { border-color: var(--green); color: var(--green); }
@@ -490,46 +554,50 @@
 
     .trade-details-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 8px;
-      font-size: 11px;
-      background: rgba(255,255,255,0.02);
-      padding: 8px;
-      border-radius: 4px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      font-size: 10px;
     }
 
-    .trade-details-grid span { color: var(--text-muted); display: block; font-size: 9px; }
+    .trade-details-grid span { color: var(--text-muted); display: block; font-size: 8px; }
 
     /* FOOTER */
     .footer {
-      margin-top: 30px;
-      padding-top: 16px;
-      border-top: 1px solid var(--panel-border);
+      margin-top: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
-      font-size: 10px;
+      font-size: 9px;
       color: var(--text-muted);
-      letter-spacing: 1px;
-    }
-
-    @media (max-width: 1024px) {
-      .dashboard-grid { grid-template-columns: 1fr; }
-      .trade-details-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      letter-spacing: 0.5px;
     }
   </style>
+
 </head>
 
 <body>
 
+<div id="lockScreen" class="lock-screen">
+  <div id="lockCard" class="lock-card">
+    <div class="lock-logo">N</div>
+    <h1>NDEBE TRADE PRO</h1>
+    <p class="lock-sub">Restricted Terminal // Enter Access Key</p>
+    <input id="lockPasswordInput" class="lock-input" type="password" placeholder="ENTER ACCESS KEY" autocomplete="off">
+    <button id="lockSubmitBtn" class="lock-btn" type="button">INITIALIZE TERMINAL</button>
+    <div id="lockError" class="lock-error"></div>
+  </div>
+</div>
+
+<div id="appRoot" class="app-root">
 <div class="app-container">
 
   <!-- TOP HUD -->
   <header class="topbar">
     <div class="brand">
-      <div class="brand-logo">N</div>
       <div class="brand-title">
         <h1>NDEBE TRADE PRO</h1>
-        <p>TRIPLE DIGIT DIFFER // DEMO EXECUTION ENGINE</p>
+        <p>TRIPLE DIGIT DIFFER // DEMO EXECUTION</p>
       </div>
     </div>
 
@@ -539,188 +607,197 @@
     </div>
   </header>
 
-  <div class="dashboard-grid">
-
-    <!-- LEFT COLUMN: CONTROLS & CONFIG -->
-    <div class="left-col">
-
-      <!-- 01. CONNECTION -->
-      <section class="panel">
-        <div class="panel-header">
-          <span class="panel-title">[01] DERIV AUTHENTICATION</span>
-          <span class="panel-badge">DEMO ONLY</span>
-        </div>
-
-        <div class="input-group">
-          <label for="appIdInput">Deriv App ID</label>
-          <input id="appIdInput" class="input-control" type="text" placeholder="Enter App ID">
-        </div>
-
-        <div class="input-group">
-          <label for="patInput">Personal Access Token</label>
-          <input id="patInput" class="input-control" type="password" placeholder="Enter Demo PAT Token">
-        </div>
-
-        <button id="connectBtn" class="btn" type="button">AUTHENTICATE DEMO ACCOUNT</button>
-
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <span>ACCOUNT TYPE</span>
-            <strong id="accountType">UNAUTH</strong>
-          </div>
-          <div class="metric-card">
-            <span>BALANCE</span>
-            <strong id="accountBalance">—</strong>
-          </div>
-        </div>
-
-        <div class="input-group" style="margin-top: 12px;">
-          <label>Selected Account</label>
-          <select id="accountSelect" class="input-control" disabled>
-            <option>No Account Linked</option>
-          </select>
-        </div>
-
-        <div id="connectionMessage" style="font-size: 10px; color: var(--text-muted); margin-top: 8px;">
-          Enter your App ID & Demo PAT to proceed.
-        </div>
-      </section>
-
-      <!-- 02. ENGINE CONFIG -->
-      <section class="panel">
-        <div class="panel-header">
-          <span class="panel-title">[02] EXECUTION ENGINE</span>
-        </div>
-
-        <div class="input-group">
-          <label>Target Strategy</label>
-          <select id="strategySelect" class="input-control">
-            <option value="triple-differ">Triple Digit Differ (3x Repeated)</option>
-          </select>
-        </div>
-
-        <div class="input-group">
-          <label>Locked Stake (USD)</label>
-          <input id="stakeInput" class="input-control" type="number" value="10" readonly>
-        </div>
-
-        <div class="button-group">
-          <button id="startBtn" class="btn" type="button" disabled>▶ START ENGINE</button>
-          <button id="stopBtn" class="btn btn-stop" type="button" disabled>■ STOP</button>
-        </div>
-      </section>
-
+  <!-- 01. CONNECTION -->
+  <section class="panel">
+    <div class="panel-header">
+      <span class="panel-header-icon">🔗</span>
+      <div class="panel-header-text">
+        <h2>ACCOUNT CONNECTION</h2>
+        <p>— fetches your real Deriv balance via PAT token</p>
+      </div>
     </div>
 
-    <!-- RIGHT COLUMN: MONITORING & STREAMS -->
-    <div class="right-col">
+    <div class="input-row">
+      <div class="input-group">
+        <label for="patInput">Deriv App ID</label>
+        <input class="input-control" type="text" value="34nwqE2SZ5ZxIhM" readonly>
+      </div>
+      <div class="input-group">
+        <label for="patInput">PAT Token</label>
+        <input id="patInput" class="input-control" type="password" placeholder="Enter your PAT token">
+      </div>
+    </div>
 
-      <!-- TRACKER HUD -->
-      <section class="panel">
-        <div class="panel-header">
-          <span class="panel-title">[03] LIVE TRACKER HUD</span>
-          <span class="panel-badge" id="engineRuntime">00:00:00</span>
-        </div>
+    <div class="button-group">
+      <button id="connectBtn" class="btn" type="button">Connect Account</button>
+      <button class="btn btn-stop" type="button" disabled>Disconnect</button>
+    </div>
 
-        <div class="tracker-box">
-          <div id="trackerStatus" class="tracker-status">STANDBY MODE</div>
-          <div id="trackerDescription" class="tracker-desc">Connect account and launch engine to begin active scanning.</div>
-        </div>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <span>ACCOUNT TYPE</span>
+        <strong id="accountType">UNAUTH</strong>
+      </div>
+      <div class="metric-card">
+        <span>BALANCE</span>
+        <strong id="accountBalance">—</strong>
+      </div>
+    </div>
 
-        <div class="tracker-data-grid">
-          <div class="metric-card">
-            <span>LOCKED MARKET</span>
-            <strong id="lockedMarket">NONE</strong>
-          </div>
-          <div class="metric-card">
-            <span>PATTERN</span>
-            <strong id="lockedPattern">—</strong>
-          </div>
-          <div class="metric-card">
-            <span>BARRIER DIGIT</span>
-            <strong id="entryDigit">—</strong>
-          </div>
-          <div class="metric-card">
-            <span>NEXT STEP</span>
-            <strong id="nextAction">CONNECT</strong>
-          </div>
-        </div>
-      </section>
+    <div class="input-group" style="display: none;">
+      <select id="accountSelect" class="input-control" disabled>
+        <option>No Account Linked</option>
+      </select>
+    </div>
 
-      <!-- PERFORMANCE STATS -->
-      <div class="stats-row">
-        <div class="stat-box">
-          <span>TICKS RECEIVED</span>
-          <strong id="ticksReceived">0</strong>
-        </div>
-        <div class="stat-box">
-          <span>SIGNALS DETECTED</span>
-          <strong id="signalsFound">0</strong>
-        </div>
-        <div class="stat-box win">
-          <span>WINS</span>
-          <strong id="winsCount">0</strong>
-        </div>
-        <div class="stat-box loss">
-          <span>LOSSES</span>
-          <strong id="lossesCount">0</strong>
+    <div id="connectionMessage" style="font-size: 11px; color: var(--text-muted);">
+      Not connected — balance shown below is not live.
+    </div>
+  </section>
+
+  <!-- 02. ENGINE CONFIG -->
+  <section class="panel">
+    <div class="panel-header">
+      <span class="panel-header-icon">🎯</span>
+      <div class="panel-header-text">
+        <h2>MARKET SELECTION</h2>
+        <p>— choose the synthetic index to track</p>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Target Strategy</label>
+      <select id="strategySelect" class="input-control">
+        <option value="triple-differ">Triple Digit Differ (3x Repeated)</option>
+      </select>
+    </div>
+
+    <div class="input-row">
+      <div class="input-group">
+        <label>Locked Stake (USD)</label>
+        <input id="stakeInput" class="input-control" type="number" value="10" readonly>
+      </div>
+      <div class="input-group">
+        <label>Runtime</label>
+        <input id="engineRuntime" class="input-control" type="text" value="00:00:00" readonly>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button id="startBtn" class="btn btn-gradient" type="button" disabled>▶ Start Auto Trade</button>
+      <button id="stopBtn" class="btn btn-stop" type="button" disabled>■ Stop</button>
+    </div>
+  </section>
+
+  <!-- TRACKER HUD -->
+  <section class="panel">
+    <div class="panel-header">
+      <span class="panel-header-icon">🧠</span>
+      <div class="panel-header-text">
+        <h2>TRACKER</h2>
+        <p>— live scan across all markets for the loaded strategy</p>
+      </div>
+    </div>
+
+    <div class="tracker-box">
+      <div class="tracker-indicator"></div>
+      <div>
+        <div id="trackerStatus" class="tracker-status">Idle</div>
+        <div id="trackerDescription" class="tracker-desc">Press Start Auto Trade to begin analyzing</div>
+      </div>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <span>LOCKED MARKET</span>
+        <strong id="lockedMarket">NONE</strong>
+      </div>
+      <div class="metric-card">
+        <span>PATTERN</span>
+        <strong id="lockedPattern">—</strong>
+      </div>
+      <div class="metric-card">
+        <span>BARRIER DIGIT</span>
+        <strong id="entryDigit">—</strong>
+      </div>
+      <div class="metric-card">
+        <span>NEXT STEP</span>
+        <strong id="nextAction">CONNECT</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFORMANCE STATS -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <span>TICKS</span>
+      <strong id="ticksReceived">0</strong>
+    </div>
+    <div class="stat-box">
+      <span>SIGNALS</span>
+      <strong id="signalsFound">0</strong>
+    </div>
+    <div class="stat-box win">
+      <span>WINS</span>
+      <strong id="winsCount">0</strong>
+    </div>
+    <div class="stat-box loss">
+      <span>LOSSES</span>
+      <strong id="lossesCount">0</strong>
+    </div>
+  </div>
+
+  <!-- TABS SECTION -->
+  <section class="panel">
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('market-tab')">LIVE MARKETS (15)</button>
+      <button class="tab-btn" onclick="switchTab('channel-tab')">TRADING LOGS</button>
+      <button class="tab-btn" onclick="switchTab('metrics-tab')">PERFORMANCE</button>
+    </div>
+
+    <!-- TAB 1: MARKETS -->
+    <div id="market-tab" class="tab-content active">
+      <div id="marketFeed" class="market-grid"></div>
+    </div>
+
+    <!-- TAB 2: LOGS -->
+    <div id="channel-tab" class="tab-content">
+      <div id="tradingChannel" class="channel-list">
+        <div style="text-align: center; color: var(--text-muted); padding: 20px; font-size: 11px;">
+          No active execution logs recorded.
         </div>
       </div>
-
-      <!-- TABS SECTION -->
-      <section class="panel">
-        <div class="tab-bar">
-          <button class="tab-btn active" onclick="switchTab('market-tab')">LIVE MARKETS (15)</button>
-          <button class="tab-btn" onclick="switchTab('channel-tab')">TRADING LOGS</button>
-          <button class="tab-btn" onclick="switchTab('metrics-tab')">PERFORMANCE MATRIX</button>
-        </div>
-
-        <!-- TAB 1: MARKETS -->
-        <div id="market-tab" class="tab-content active">
-          <div id="marketFeed" class="market-grid"></div>
-        </div>
-
-        <!-- TAB 2: LOGS -->
-        <div id="channel-tab" class="tab-content">
-          <div id="tradingChannel" class="channel-list">
-            <div style="text-align: center; color: var(--text-muted); padding: 30px; font-size: 11px;">
-              No active execution logs recorded.
-            </div>
-          </div>
-        </div>
-
-        <!-- TAB 3: MATRIX -->
-        <div id="metrics-tab" class="tab-content">
-          <div class="tracker-data-grid">
-            <div class="metric-card">
-              <span>TOTAL STAKE</span>
-              <strong id="totalStake">0.00</strong>
-            </div>
-            <div class="metric-card">
-              <span>TOTAL WIN PROFIT</span>
-              <strong id="totalWinAmount" style="color: var(--green)">0.00</strong>
-            </div>
-            <div class="metric-card">
-              <span>TOTAL LOSS AMOUNT</span>
-              <strong id="totalLossAmount" style="color: var(--red)">0.00</strong>
-            </div>
-            <div class="metric-card">
-              <span>CLOSED TRADES</span>
-              <strong id="closedCount">0</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
 
-  </div>
+    <!-- TAB 3: MATRIX -->
+    <div id="metrics-tab" class="tab-content">
+      <div class="metrics-grid" style="margin-top: 12px;">
+        <div class="metric-card">
+          <span>TOTAL STAKE</span>
+          <strong id="totalStake">0.00</strong>
+        </div>
+        <div class="metric-card">
+          <span>TOTAL WIN PROFIT</span>
+          <strong id="totalWinAmount" style="color: var(--green)">0.00</strong>
+        </div>
+        <div class="metric-card">
+          <span>TOTAL LOSS AMOUNT</span>
+          <strong id="totalLossAmount" style="color: var(--red)">0.00</strong>
+        </div>
+        <div class="metric-card">
+          <span>CLOSED TRADES</span>
+          <strong id="closedCount">0</strong>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <span>NDEBE TRADE PRO // TRIPLE DIGIT DIFFER ENGINE</span>
     <span id="footerTime">—</span>
   </footer>
 
+</div>
 </div>
 
 <script>
@@ -733,6 +810,8 @@ const ACCOUNTS_URL  = "https://api.derivws.com/trading/v1/options/accounts";
 const OTP_URL_BASE  = "https://api.derivws.com/trading/v1/options/accounts";
 
 const DEMO_ONLY = true;
+const DERIV_APP_ID = "34nwqE2SZ5ZxIhMxKDqUf";
+const LOCK_PASSWORD = "SUCCESSV12";
 const CONTRACT_TYPE = "DIGITDIFF";
 const CONTRACT_DURATION = 1;
 const CONTRACT_DURATION_UNIT = "t";
@@ -745,21 +824,17 @@ const MARKETS = [
   { symbol: "R_50",     name: "Volatility 50",     decimals: 4 },
   { symbol: "R_75",     name: "Volatility 75",     decimals: 4 },
   { symbol: "R_100",    name: "Volatility 100",    decimals: 2 },
-  { symbol: "1HZ10V",   name: "Volatility 10 1s",  decimals: 2 },
   { symbol: "1HZ25V",   name: "Volatility 25 1s",  decimals: 2 },
   { symbol: "1HZ50V",   name: "Volatility 50 1s",  decimals: 2 },
   { symbol: "1HZ75V",   name: "Volatility 75 1s",  decimals: 2 },
-  { symbol: "1HZ100V",  name: "Volatility 100 1s", decimals: 2 },
   { symbol: "JD10",     name: "Jump 10",            decimals: 2 },
   { symbol: "JD25",     name: "Jump 25",            decimals: 2 },
   { symbol: "JD50",     name: "Jump 50",            decimals: 2 },
-  { symbol: "JD75",     name: "Jump 75",            decimals: 2 },
-  { symbol: "JD100",    name: "Jump 100",           decimals: 2 }
+  { symbol: "JD75",     name: "Jump 75",            decimals: 2 }
 ];
 
 const $ = id => document.getElementById(id);
 
-const appIdInput       = $("appIdInput");
 const patInput         = $("patInput");
 const connectBtn       = $("connectBtn");
 const accountSelect    = $("accountSelect");
@@ -789,6 +864,11 @@ const marketFeed       = $("marketFeed");
 
 let publicWebSocket = null;
 let demoTradingWebSocket = null;
+let manualDisconnect = false;
+let demoPingInterval = null;
+let publicPingInterval = null;
+let demoReconnectTimer = null;
+let publicReconnectTimer = null;
 
 let accountConnected = false;
 let demoTradingReady = false;
@@ -807,6 +887,8 @@ let requestCounter = 1000;
 let globalLock = null;
 let activeContract = null;
 let trades = [];
+let tradeWatchdogTimer = null;
+const TRADE_TIMEOUT_MS = 15000;
 
 const marketState = {};
 
@@ -948,6 +1030,7 @@ async function getDemoWebSocketURL() {
 }
 
 async function connectDemoTradingSocket() {
+  manualDisconnect = false;
   const url = await getDemoWebSocketURL();
   demoTradingWebSocket = new WebSocket(url);
 
@@ -960,17 +1043,116 @@ async function connectDemoTradingSocket() {
     trackerDescription.textContent = "Authenticated WebSocket online. Ready to launch scanner.";
     nextAction.textContent = "START ENGINE";
     showMessage("Demo connection established.", "success");
+    demoTradingWebSocket.send(JSON.stringify({ balance: 1, subscribe: 1, req_id: getRequestId() }));
+
+    if (activeContract && activeContract.contractId) {
+      demoTradingWebSocket.send(JSON.stringify({
+        proposal_open_contract: 1, contract_id: activeContract.contractId, subscribe: 1, req_id: getRequestId()
+      }));
+    }
+
+    clearInterval(demoPingInterval);
+    demoPingInterval = setInterval(() => {
+      if (demoTradingWebSocket && demoTradingWebSocket.readyState === WebSocket.OPEN) {
+        demoTradingWebSocket.send(JSON.stringify({ ping: 1, req_id: getRequestId() }));
+      }
+    }, 20000);
+
     openPublicWebSocket();
   };
 
   demoTradingWebSocket.onmessage = e => handleDemoMessage(e.data);
+
+  demoTradingWebSocket.onclose = () => {
+    demoTradingReady = false;
+    accountConnected = false;
+    clearInterval(demoPingInterval);
+
+    if (manualDisconnect) {
+      setSystemStatus("DISCONNECTED", "offline");
+      return;
+    }
+
+    setSystemStatus("RECONNECTING", "warning");
+    showMessage("WebSocket connection lost. Reconnecting...", "error");
+    clearTimeout(demoReconnectTimer);
+    demoReconnectTimer = setTimeout(() => {
+      connectDemoTradingSocket().catch(err => showMessage(err.message, "error"));
+    }, 3000);
+  };
+
+  demoTradingWebSocket.onerror = () => {
+    if (demoTradingWebSocket) demoTradingWebSocket.close();
+  };
 }
 
 function handleDemoMessage(raw) {
   const data = JSON.parse(raw);
+  if (data.error) return handleTradeError(data);
   if (data.msg_type === "proposal") handleProposal(data);
   if (data.msg_type === "buy") handleBuy(data);
   if (data.msg_type === "proposal_open_contract") handleContractUpdate(data);
+  if (data.msg_type === "balance") handleBalanceUpdate(data);
+}
+
+function handleTradeError(data) {
+  if (!activeContract) {
+    showMessage(data.error?.message || "Request failed.", "error");
+    return;
+  }
+  clearTimeout(tradeWatchdogTimer);
+  const trade = trades.find(t => t.id === activeContract.tradeId);
+  if (trade) {
+    trade.status = "CLOSED";
+    trade.result = "ERROR";
+    trade.profit = 0;
+  }
+  activeContract = null;
+  globalLock = null;
+  trackerStatus.textContent = "SCANNING";
+  nextAction.textContent = "—";
+  showMessage(data.error?.message || "Trade request failed.", "error");
+  renderTradingChannel();
+}
+
+function handleBalanceUpdate(data) {
+  const bal = data.balance;
+  if (!bal) return;
+  const acc = accounts[accountSelect.selectedIndex];
+  if (acc) acc.balance = bal.balance;
+  accountBalance.textContent = `${Number(bal.balance).toFixed(2)} USD`;
+}
+
+function armTradeWatchdog(tradeId) {
+  clearTimeout(tradeWatchdogTimer);
+  tradeWatchdogTimer = setTimeout(() => resolveStuckTrade(tradeId), TRADE_TIMEOUT_MS);
+}
+
+function resolveStuckTrade(tradeId) {
+  if (!activeContract || activeContract.tradeId !== tradeId) return;
+
+  if (activeContract.contractId && !activeContract.resubscribed &&
+      demoTradingWebSocket && demoTradingWebSocket.readyState === WebSocket.OPEN) {
+    activeContract.resubscribed = true;
+    demoTradingWebSocket.send(JSON.stringify({
+      proposal_open_contract: 1, contract_id: activeContract.contractId, subscribe: 1, req_id: getRequestId()
+    }));
+    tradeWatchdogTimer = setTimeout(() => resolveStuckTrade(tradeId), TRADE_TIMEOUT_MS);
+    return;
+  }
+
+  const trade = trades.find(t => t.id === tradeId);
+  if (trade) {
+    trade.status = "CLOSED";
+    trade.result = "TIMEOUT";
+    trade.profit = 0;
+  }
+  activeContract = null;
+  globalLock = null;
+  trackerStatus.textContent = "SCANNING";
+  nextAction.textContent = "—";
+  showMessage("Trade timed out waiting for a response. Resuming scan.", "error");
+  renderTradingChannel();
 }
 
 function openPublicWebSocket() {
@@ -980,11 +1162,30 @@ function openPublicWebSocket() {
     MARKETS.forEach(m => {
       publicWebSocket.send(JSON.stringify({ ticks: m.symbol, subscribe: 1, req_id: getRequestId() }));
     });
+
+    clearInterval(publicPingInterval);
+    publicPingInterval = setInterval(() => {
+      if (publicWebSocket && publicWebSocket.readyState === WebSocket.OPEN) {
+        publicWebSocket.send(JSON.stringify({ ping: 1, req_id: getRequestId() }));
+      }
+    }, 20000);
   };
 
   publicWebSocket.onmessage = e => {
     const data = JSON.parse(e.data);
     if (data.tick) processTick(data.tick);
+  };
+
+  publicWebSocket.onclose = () => {
+    publicFeedReady = false;
+    clearInterval(publicPingInterval);
+    if (manualDisconnect) return;
+    clearTimeout(publicReconnectTimer);
+    publicReconnectTimer = setTimeout(openPublicWebSocket, 3000);
+  };
+
+  publicWebSocket.onerror = () => {
+    if (publicWebSocket) publicWebSocket.close();
   };
 }
 
@@ -1037,6 +1238,8 @@ function createSignal(symbol, entryQuote, digit) {
   lockedPattern.textContent = trade.pattern;
   entryDigit.textContent = digit;
   nextAction.textContent = "PROPOSAL";
+  renderTradingChannel();
+  armTradeWatchdog(trade.id);
 
   requestDigitDiffProposal(trade);
 }
@@ -1070,6 +1273,9 @@ function handleBuy(data) {
 
   activeContract.contractId = data.buy.contract_id;
   trackerStatus.textContent = "CONTRACT ACTIVE";
+  nextAction.textContent = "MONITORING";
+  renderTradingChannel();
+  armTradeWatchdog(trade.id);
 
   demoTradingWebSocket.send(JSON.stringify({
     proposal_open_contract: 1, contract_id: data.buy.contract_id, subscribe: 1, req_id: getRequestId()
@@ -1081,6 +1287,7 @@ function handleContractUpdate(data) {
   if (!contract || !activeContract) return;
 
   if (contract.is_sold) {
+    clearTimeout(tradeWatchdogTimer);
     const trade = trades.find(t => t.id === activeContract.tradeId);
     if (trade) {
       trade.status = "CLOSED";
@@ -1091,6 +1298,7 @@ function handleContractUpdate(data) {
     activeContract = null;
     globalLock = null;
     trackerStatus.textContent = "SCANNING";
+    nextAction.textContent = "—";
     renderTradingChannel();
   }
 }
@@ -1157,9 +1365,9 @@ function updateRuntime() {
 }
 
 async function connectAccount() {
-  const appId = appIdInput.value.trim();
+  const appId = DERIV_APP_ID;
   const pat = patInput.value.trim();
-  if (!appId || !pat) return showMessage("App ID and PAT are required.", "error");
+  if (!pat) return showMessage("Demo PAT token is required.", "error");
 
   window.NDEBE_AUTH = { appId, pat };
   try {
@@ -1177,6 +1385,33 @@ stopBtn.addEventListener("click", stopEngine);
 
 initializeMarketFeed();
 $("footerTime").textContent = new Date().toLocaleDateString();
+
+/* ============ LOCK SCREEN ============ */
+const lockScreen = $("lockScreen");
+const lockCard   = $("lockCard");
+const lockInput  = $("lockPasswordInput");
+const lockBtn    = $("lockSubmitBtn");
+const lockError  = $("lockError");
+const appRoot    = $("appRoot");
+
+function attemptUnlock() {
+  const value = lockInput.value.trim();
+  if (value === LOCK_PASSWORD) {
+    lockScreen.style.display = "none";
+    appRoot.classList.add("visible");
+  } else {
+    lockError.textContent = "Incorrect access code.";
+    lockCard.classList.remove("shake");
+    void lockCard.offsetWidth;
+    lockCard.classList.add("shake");
+    lockInput.value = "";
+    lockInput.focus();
+  }
+}
+
+lockBtn.addEventListener("click", attemptUnlock);
+lockInput.addEventListener("keydown", e => { if (e.key === "Enter") attemptUnlock(); });
+lockInput.focus();
 </script>
 
 </body>
