@@ -16,21 +16,17 @@
       --card-bg: #110c24;
       --input-bg: #181233;
       --border-color: rgba(255, 255, 255, 0.08);
-      
       --cyan: #00f2fe;
       --purple: #a855f7;
       --magenta: #e84393;
       --btn-gradient: linear-gradient(135deg, #a855f7 0%, #e84393 100%);
       --btn-cyan-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
-      
       --green: #00e676;
       --red: #ff3860;
       --yellow: #ffb703;
-
       --text-main: #ffffff;
       --text-muted: #7e7a9c;
       --text-sub: #a29bfe;
-
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
@@ -57,7 +53,6 @@
       gap: 16px;
     }
 
-    /* ============ LOCK SCREEN ============ */
     .lock-screen {
       position: fixed;
       inset: 0;
@@ -169,7 +164,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* HEADER HUD */
     .topbar {
       display: flex;
       justify-content: space-between;
@@ -249,7 +243,6 @@
       letter-spacing: 1px;
     }
 
-    /* CARD PANELS */
     .panel {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -283,7 +276,6 @@
       margin-top: 2px;
     }
 
-    /* INPUT CONTROLS */
     .input-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -319,7 +311,6 @@
 
     .input-control:focus { border-color: var(--purple); }
 
-    /* BUTTONS */
     .btn {
       width: 100%;
       padding: 14px;
@@ -347,7 +338,6 @@
     }
 
     .btn-gradient { background: var(--btn-gradient); }
-
     .btn-stop { background: linear-gradient(135deg, #ff3860 0%, #d63031 100%); }
 
     .button-group {
@@ -356,7 +346,6 @@
       gap: 10px;
     }
 
-    /* METRICS METRIC CARDS */
     .metrics-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -385,7 +374,6 @@
       display: block;
     }
 
-    /* LIVE TRACKER HUD */
     .tracker-box {
       background: var(--input-bg);
       border: 1px solid var(--border-color);
@@ -416,7 +404,6 @@
       margin-top: 2px;
     }
 
-    /* STATS GRID */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -448,7 +435,6 @@
       margin-top: 4px;
     }
 
-    /* TABS & MARKET FEED */
     .tab-bar {
       display: flex;
       gap: 6px;
@@ -478,104 +464,60 @@
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    /* PROFIT PLANNER */
-    .part-selector {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
+    .part-selector { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
     .part-btn {
-      flex: 1;
-      min-width: 70px;
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 11px;
-      padding: 10px 6px;
-      transition: all 0.2s ease;
+      flex: 1; min-width: 70px; background: var(--input-bg);
+      border: 1px solid var(--border-color); border-radius: 10px;
+      color: var(--text-muted); cursor: pointer; font-weight: 700;
+      font-size: 11px; padding: 10px 6px; transition: all 0.2s ease;
     }
     .part-btn:hover { border-color: var(--purple); }
     .part-btn.active {
       background: rgba(168, 85, 247, 0.15);
-      border-color: var(--purple);
-      color: var(--text-main);
+      border-color: var(--purple); color: var(--text-main);
     }
     .part-btn .part-balance {
-      display: block;
-      font-size: 9px;
-      color: var(--yellow);
-      font-weight: 400;
-      margin-top: 2px;
+      display: block; font-size: 9px; color: var(--yellow);
+      font-weight: 400; margin-top: 2px;
     }
     .pp-progress-track {
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      height: 10px;
-      margin-top: 12px;
-      overflow: hidden;
+      background: var(--input-bg); border: 1px solid var(--border-color);
+      border-radius: 8px; height: 10px; margin-top: 12px; overflow: hidden;
     }
     .pp-progress-bar {
-      height: 100%;
-      background: var(--btn-gradient);
-      border-radius: 8px;
-      transition: width 0.4s ease;
-      width: 0%;
+      height: 100%; background: var(--btn-gradient);
+      border-radius: 8px; transition: width 0.4s ease; width: 0%;
     }
     .pp-progress-label {
-      text-align: center;
-      font-size: 10px;
-      color: var(--text-muted);
+      text-align: center; font-size: 10px; color: var(--text-muted);
       margin: 6px 0 12px;
     }
     .pp-status-line {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 10px;
+      font-size: 11px; color: var(--text-muted); margin-top: 10px;
       text-align: right;
     }
     .pp-history {
-      margin-top: 12px;
-      max-height: 120px;
-      overflow-y: auto;
-      border-top: 1px solid var(--border-color);
-      padding-top: 8px;
+      margin-top: 12px; max-height: 120px; overflow-y: auto;
+      border-top: 1px solid var(--border-color); padding-top: 8px;
     }
     .pp-history-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 4px 0;
-      font-size: 11px;
-      color: var(--text-muted);
+      display: flex; justify-content: space-between; padding: 4px 0;
+      font-size: 11px; color: var(--text-muted);
       border-bottom: 1px solid rgba(255, 255, 255, 0.03);
     }
-    .pp-history-row .pp-h-profit {
-      color: var(--green);
-      font-weight: 700;
-    }
+    .pp-history-row .pp-h-profit { color: var(--green); font-weight: 700; }
     .pp-history-empty {
-      text-align: center;
-      font-size: 11px;
-      color: var(--text-muted);
+      text-align: center; font-size: 11px; color: var(--text-muted);
       padding: 8px 0;
     }
 
     .market-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px;
     }
 
     .market-card {
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 12px;
+      background: var(--input-bg); border: 1px solid var(--border-color);
+      border-radius: 10px; padding: 12px;
     }
 
     .market-card.locked {
@@ -584,105 +526,67 @@
     }
 
     .market-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
+      display: flex; justify-content: space-between;
+      align-items: center; margin-bottom: 6px;
     }
 
-    .market-name {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--cyan);
-    }
-
+    .market-name { font-size: 11px; font-weight: 600; color: var(--cyan); }
     .market-badge { font-size: 8px; color: var(--text-muted); }
 
     .market-quote {
-      font-family: var(--font-mono);
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 6px;
+      font-family: var(--font-mono); font-size: 15px;
+      font-weight: 700; margin-bottom: 6px;
     }
 
     .market-foot {
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
-      color: var(--text-muted);
+      display: flex; justify-content: space-between;
+      font-size: 10px; color: var(--text-muted);
     }
 
     .market-digit-highlight { color: var(--yellow); font-weight: 700; }
 
-    /* FOCUS MARKET */
     .focus-price-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
     }
 
     .focus-price-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 4px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+      color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;
     }
 
     .focus-price-value {
-      font-family: var(--font-mono);
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--text-main);
+      font-family: var(--font-mono); font-size: 24px;
+      font-weight: 700; color: var(--text-main);
       transition: color 0.2s ease;
     }
 
-    .focus-price-value.small {
-      font-size: 15px;
-      color: var(--text-sub);
-    }
-
+    .focus-price-value.small { font-size: 15px; color: var(--text-sub); }
     .focus-price-value.up { color: var(--green); }
     .focus-price-value.down { color: var(--red); }
 
     .focus-loading-status {
-      font-size: 11px;
-      color: var(--text-muted);
-      min-height: 14px;
+      font-size: 11px; color: var(--text-muted); min-height: 14px;
     }
 
     .digit-dist-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
     }
 
     .digit-circle {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      background: var(--input-bg);
-      border: 2px solid var(--border-color);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      position: relative; aspect-ratio: 1 / 1; border-radius: 50%;
+      background: var(--input-bg); border: 2px solid var(--border-color);
+      display: flex; flex-direction: column; align-items: center;
       justify-content: center;
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .digit-circle .dc-num {
-      font-family: var(--font-mono);
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--text-main);
+      font-family: var(--font-mono); font-size: 18px;
+      font-weight: 800; color: var(--text-main);
     }
 
     .digit-circle .dc-pct {
-      font-size: 9px;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-top: 2px;
+      font-size: 9px; font-weight: 600; color: var(--text-muted); margin-top: 2px;
     }
 
     .digit-circle.highest {
@@ -700,8 +604,7 @@
     .digit-circle.lowest .dc-pct { color: var(--red); }
 
     .digit-circle.active-cursor {
-      transform: scale(1.12);
-      border-color: var(--cyan);
+      transform: scale(1.12); border-color: var(--cyan);
       box-shadow: 0 0 18px rgba(0, 242, 254, 0.9);
       animation: digit-pulse 0.5s ease;
     }
@@ -715,112 +618,67 @@
     }
 
     .digit-dist-legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      font-size: 10px;
-      color: var(--text-muted);
-      align-items: center;
+      display: flex; flex-wrap: wrap; gap: 14px;
+      font-size: 10px; color: var(--text-muted); align-items: center;
     }
 
     .legend-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin-right: 4px;
-      vertical-align: middle;
+      display: inline-block; width: 8px; height: 8px;
+      border-radius: 50%; margin-right: 4px; vertical-align: middle;
     }
 
     .legend-cursor { background: var(--cyan); box-shadow: 0 0 6px var(--cyan); }
     .legend-high   { background: var(--green); box-shadow: 0 0 6px var(--green); }
     .legend-low    { background: var(--red); box-shadow: 0 0 6px var(--red); }
 
-    /* SCAN VOLATILITY DEVIATION */
     .svd-market-list {
-      font-size: 10px;
-      color: var(--text-muted);
-      line-height: 1.6;
+      font-size: 10px; color: var(--text-muted); line-height: 1.6;
       letter-spacing: 0.3px;
     }
 
-    .svd-progress-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+    .svd-progress-wrap { display: flex; flex-direction: column; gap: 6px; }
 
     .svd-progress-track {
-      width: 100%;
-      height: 8px;
-      border-radius: 6px;
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
+      width: 100%; height: 8px; border-radius: 6px;
+      background: var(--input-bg); border: 1px solid var(--border-color);
       overflow: hidden;
     }
 
     .svd-progress-bar {
-      height: 100%;
-      width: 0%;
-      background: var(--btn-gradient);
-      border-radius: 6px;
-      transition: width 0.2s ease;
+      height: 100%; width: 0%; background: var(--btn-gradient);
+      border-radius: 6px; transition: width 0.2s ease;
     }
 
     .svd-progress-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      text-align: center;
+      font-size: 11px; color: var(--text-muted); text-align: center;
     }
 
     .svd-result {
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 14px;
-      text-align: center;
+      background: var(--input-bg); border: 1px solid var(--border-color);
+      border-radius: 12px; padding: 14px; text-align: center;
     }
 
-    .svd-score {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
+    .svd-score { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
 
     .svd-prediction {
-      background: var(--input-bg);
-      border: 2px solid var(--cyan);
+      background: var(--input-bg); border: 2px solid var(--cyan);
       box-shadow: 0 0 14px rgba(0, 242, 254, 0.35);
-      border-radius: 12px;
-      padding: 14px;
-      text-align: center;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-main);
+      border-radius: 12px; padding: 14px; text-align: center;
+      font-size: 15px; font-weight: 700; color: var(--text-main);
     }
 
     .svd-prediction span {
-      color: var(--cyan);
-      font-family: var(--font-mono);
-      font-size: 20px;
-      margin-left: 4px;
+      color: var(--cyan); font-family: var(--font-mono);
+      font-size: 20px; margin-left: 4px;
     }
 
-    .svd-button-row {
-      display: flex;
-      gap: 10px;
-    }
+    .svd-button-row { display: flex; gap: 10px; }
     .svd-button-row .btn { flex: 1; }
 
     .grade-badge {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      padding: 2px 8px;
-      border-radius: 6px;
-      font-size: 10px;
-      margin-right: 6px;
+      display: inline-block; font-family: var(--font-mono);
+      font-weight: 700; letter-spacing: 0.5px; padding: 2px 8px;
+      border-radius: 6px; font-size: 10px; margin-right: 6px;
     }
     .grade-STRONG     { background: rgba(0, 230, 118, 0.15);  color: var(--green); }
     .grade-ACTIVE     { background: rgba(0, 242, 254, 0.15);  color: var(--cyan); }
@@ -830,51 +688,33 @@
     .grade-CONFLICTED { background: rgba(255, 56, 96, 0.15);  color: var(--red); }
 
     .ou-market-list {
-      font-size: 10px;
-      color: var(--text-muted);
-      line-height: 1.7;
-      letter-spacing: 0.3px;
+      font-size: 10px; color: var(--text-muted);
+      line-height: 1.7; letter-spacing: 0.3px;
     }
     .ou-status-line {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 6px;
+      font-size: 11px; color: var(--text-muted); margin-top: 6px;
     }
 
-    /* LOG CARDS */
     .channel-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 12px;
+      display: flex; flex-direction: column; gap: 8px; margin-top: 12px;
     }
 
     .trade-card {
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 12px;
+      background: var(--input-bg); border: 1px solid var(--border-color);
+      border-radius: 10px; padding: 12px;
     }
 
     .trade-card.win { border-color: var(--green); }
     .trade-card.loss { border-color: var(--red); }
 
     .trade-card-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
+      display: flex; justify-content: space-between; margin-bottom: 8px;
     }
 
-    .trade-title {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--cyan);
-    }
+    .trade-title { font-size: 11px; font-weight: 600; color: var(--cyan); }
 
     .trade-badge {
-      font-size: 9px;
-      padding: 2px 6px;
-      border-radius: 4px;
+      font-size: 9px; padding: 2px 6px; border-radius: 4px;
       border: 1px solid var(--border-color);
     }
 
@@ -882,139 +722,89 @@
     .trade-badge.loss { border-color: var(--red); color: var(--red); }
 
     .trade-details-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      font-size: 10px;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 6px; font-size: 10px;
     }
 
-    .trade-details-grid span { color: var(--text-muted); display: block; font-size: 8px; }
+    .trade-details-grid span {
+      color: var(--text-muted); display: block; font-size: 8px;
+    }
 
-    /* MONEY MANAGEMENT STATUS BANNER */
     .mm-status-banner {
-      padding: 10px;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 11px;
-      border: 1px solid var(--border-color);
+      padding: 10px; border-radius: 10px; text-align: center;
+      font-weight: 700; font-size: 11px; border: 1px solid var(--border-color);
     }
 
     .mm-status-banner.active { color: var(--text-sub); background: rgba(0,242,254,0.06); }
     .mm-status-banner.tp { color: var(--green); background: rgba(0,230,118,0.12); border-color: var(--green); }
     .mm-status-banner.sl { color: var(--red); background: rgba(255,56,96,0.12); border-color: var(--red); }
 
-    /* HISTORICAL ANALYZER RESULT BLOCKS */
     .weekday-block { margin-bottom: 14px; }
 
     .weekday-title {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--cyan);
-      letter-spacing: 0.5px;
-      margin-bottom: 6px;
+      font-size: 12px; font-weight: 800; color: var(--cyan);
+      letter-spacing: 0.5px; margin-bottom: 6px;
     }
 
     .period-row {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 8px 10px;
-      margin-bottom: 6px;
-      font-size: 11px;
+      display: flex; flex-direction: column; gap: 2px;
+      background: var(--input-bg); border: 1px solid var(--border-color);
+      border-radius: 8px; padding: 8px 10px; margin-bottom: 6px; font-size: 11px;
     }
 
     .period-row .period-main {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 700;
+      display: flex; align-items: center; gap: 6px; font-weight: 700;
     }
 
     .period-medal { font-size: 14px; }
-
-    .period-stats {
-      color: var(--text-muted);
-      font-size: 9px;
-    }
+    .period-stats { color: var(--text-muted); font-size: 9px; }
 
     .no-data-row {
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 10px;
-      padding: 10px;
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
+      text-align: center; color: var(--text-muted); font-size: 10px;
+      padding: 10px; background: var(--input-bg);
+      border: 1px solid var(--border-color); border-radius: 8px;
     }
 
     .progress-text {
-      font-size: 10px;
-      color: var(--text-sub);
-      min-height: 14px;
+      font-size: 10px; color: var(--text-sub); min-height: 14px;
       word-break: break-word;
     }
 
     .hist-progress-bar {
-      width: 100%;
-      height: 8px;
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      overflow: hidden;
+      width: 100%; height: 8px; background: var(--input-bg);
+      border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden;
     }
 
     .hist-progress-fill {
-      height: 100%;
-      width: 0%;
-      background: var(--btn-cyan-gradient);
+      height: 100%; width: 0%; background: var(--btn-cyan-gradient);
       transition: width 0.25s ease;
     }
 
     .hist-market-status-list {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      max-height: 220px;
-      overflow-y: auto;
+      display: flex; flex-direction: column; gap: 4px;
+      max-height: 220px; overflow-y: auto;
     }
 
     .hist-market-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 10px;
-      padding: 6px 10px;
-      border-radius: 6px;
-      background: var(--input-bg);
-      border: 1px solid var(--border-color);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 10px; padding: 6px 10px; border-radius: 6px;
+      background: var(--input-bg); border: 1px solid var(--border-color);
     }
 
     .hist-market-row .tag {
-      font-size: 9px;
-      padding: 2px 6px;
-      border-radius: 4px;
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
+      font-size: 9px; padding: 2px 6px; border-radius: 4px;
+      border: 1px solid var(--border-color); color: var(--text-muted);
     }
 
     .hist-market-row .tag.fetching { color: var(--yellow); border-color: var(--yellow); }
     .hist-market-row .tag.done { color: var(--green); border-color: var(--green); }
     .hist-market-row .tag.error { color: var(--red); border-color: var(--red); }
 
-    /* FOOTER */
     .footer {
-      margin-top: 10px;
-      padding-top: 12px;
+      margin-top: 10px; padding-top: 12px;
       border-top: 1px solid var(--border-color);
-      display: flex;
-      justify-content: space-between;
-      font-size: 9px;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
+      display: flex; justify-content: space-between;
+      font-size: 9px; color: var(--text-muted); letter-spacing: 0.5px;
     }
   </style>
 </head>
@@ -1463,29 +1253,23 @@ const accountSelect    = $("accountSelect");
 const accountType      = $("accountType");
 const accountBalance   = $("accountBalance");
 const connectionMessage= $("connectionMessage");
-
 const startBtn         = $("startBtn");
 const stopBtn          = $("stopBtn");
-
 const systemDot        = $("systemDot");
 const systemStatus     = $("systemStatus");
-
 const trackerStatus    = $("trackerStatus");
 const trackerDescription= $("trackerDescription");
 const lockedMarket     = $("lockedMarket");
 const lockedPattern    = $("lockedPattern");
 const entryDigit       = $("entryDigit");
 const nextAction       = $("nextAction");
-
 const ticksReceived    = $("ticksReceived");
 const signalsFound     = $("signalsFound");
 const engineRuntime    = $("engineRuntime");
-
 const tradingChannel   = $("tradingChannel");
 const marketFeed       = $("marketFeed");
 const strategySelect   = $("strategySelect");
 const trackerPanelDesc = $("trackerPanelDesc");
-
 const focusMarketSelect = $("focusMarketSelect");
 const focusMarketSub    = $("focusMarketSub");
 const focusPriceValue   = $("focusPriceValue");
@@ -1542,117 +1326,150 @@ let currentFocusMarket = MARKETS[0].symbol;
 let focusPrevPriceNum  = null;
 
 /* ============================================================
-   GLOBAL 1000-TICK HISTORY PRELOAD
-   Every market must ALWAYS have its full 1000-tick D-circle
-   distribution loaded from Deriv's history endpoint before the
-   user can trade or read the panels. The app must never "build
-   up" 1000 ticks from live ticks from scratch — that produces
-   wrong percentages for minutes and doesn't match the Deriv
-   website. So we fetch all 12 markets' 1000-tick histories in
-   parallel as soon as the public feed is ready (and again on
-   reconnect if any buffer is still thin), then keep them rolling
-   with the live ticks that already flow through processTick().
+   GLOBAL 1000-TICK HISTORY PRELOAD — ROBUST QUEUED LOADER
+   Deriv's public history WS (app_id=1089) will reject parallel
+   requests. We must load markets SEQUENTIALLY, with retries,
+   and we must not let the app proceed into any trading state
+   until every market's buffer is full. Live ticks are held
+   back from being counted in the distribution until the
+   history buffer is confirmed full, so a partially-loaded
+   buffer can never be displayed.
    ============================================================ */
-let globalHistoryPreloadPromise = null;
+const HISTORY_PRELOAD_MAX_ATTEMPTS = 4;
+const HISTORY_PRELOAD_BACKOFF_MS = [0, 800, 2000, 4500];
 
-async function preloadAllMarketHistories() {
-  if (globalHistoryPreloadPromise) return globalHistoryPreloadPromise;
+let historyPreloadRunning = false;
+let historyPreloadAllDone = false;
 
-  globalHistoryPreloadPromise = (async () => {
-    if (focusLoadingStatus) focusLoadingStatus.textContent = "Loading 1000-tick history for all markets from Deriv...";
-
-    const results = await Promise.all(MARKETS.map(async market => {
-      try {
-        const ok = await ensureMarketHistoryPrimed(market.symbol);
-        return { symbol: market.symbol, name: market.name, ok };
-      } catch (err) {
-        return { symbol: market.symbol, name: market.name, ok: false };
-      }
-    }));
-
-    renderFocusMarket(currentFocusMarket);
-    updateFocusTickCount(currentFocusMarket);
-
-    const failed = results.filter(r => !r.ok);
-    if (focusLoadingStatus) {
-      if (failed.length) {
-        focusLoadingStatus.textContent = `⚠ ${failed.length} market(s) failed to preload history — retrying on next reconnect.`;
-      } else {
-        focusLoadingStatus.textContent = "✓ All markets loaded with 1000-tick history.";
-        setTimeout(() => { if (focusLoadingStatus) focusLoadingStatus.textContent = ""; }, 4000);
-      }
+async function fetchLast1000TicksWithRetry(symbol) {
+  let lastErr = null;
+  for (let attempt = 0; attempt < HISTORY_PRELOAD_MAX_ATTEMPTS; attempt++) {
+    if (HISTORY_PRELOAD_BACKOFF_MS[attempt]) {
+      await new Promise(r => setTimeout(r, HISTORY_PRELOAD_BACKOFF_MS[attempt]));
     }
-
-    return results;
-  })();
-
-  return globalHistoryPreloadPromise;
+    try {
+      const history = await fetchLast1000Ticks(symbol);
+      const prices = history.prices || [];
+      if (prices.length >= 500) return { ok: true, prices };
+      lastErr = new Error(`Only ${prices.length} ticks returned`);
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  return { ok: false, error: lastErr };
 }
 
-// Any market whose 1000-tick buffer isn't full yet gets re-fetched.
-// Called on connect and on reconnect so the D circles are never
-// left showing a partially-built distribution.
-async function ensureAllHistoriesComplete() {
-  const thin = MARKETS.filter(m => {
-    const s = marketState[m.symbol];
-    return !s.historyPrimed || s.digits1000.length < SVD_MIN_SAMPLE_TICKS;
+function applyHistoryToMarket(symbol, prices) {
+  const market = MARKETS.find(m => m.symbol === symbol);
+  const state = marketState[symbol];
+  if (!market || !state) return;
+  const digits = [];
+  prices.forEach(p => {
+    const q = getFinalDigit(p, state.decimals);
+    if (q) digits.push(Number(q.finalDigit));
   });
-  if (!thin.length) return;
+  state.digits1000 = digits.slice(-1000);
+  state.historyPrimed = state.digits1000.length >= 990;
+  if (prices.length) {
+    const q = getFinalDigit(prices[prices.length - 1], state.decimals);
+    if (q) { state.lastQuote = q.formattedQuote; state.lastDigit = q.finalDigit; }
+  }
+}
 
-  await Promise.all(thin.map(m => ensureMarketHistoryPrimed(m.symbol)));
+async function preloadAllMarketHistories() {
+  if (historyPreloadRunning || historyPreloadAllDone) return;
+  historyPreloadRunning = true;
+
+  const total = MARKETS.length;
+  let completed = 0;
+  const failed = [];
+
+  if (focusLoadingStatus) {
+    focusLoadingStatus.style.color = "var(--text-sub)";
+    focusLoadingStatus.textContent = `Loading 1000-tick history for all ${total} markets from Deriv... (0/${total})`;
+  }
+
+  for (const market of MARKETS) {
+    const state = marketState[market.symbol];
+    if (state && state.historyPrimed && state.digits1000.length >= 990) {
+      completed++;
+      if (focusLoadingStatus) {
+        focusLoadingStatus.textContent = `Loading 1000-tick history for all markets... (${completed}/${total})`;
+      }
+      continue;
+    }
+    const res = await fetchLast1000TicksWithRetry(market.symbol);
+    if (res.ok) {
+      applyHistoryToMarket(market.symbol, res.prices);
+    } else {
+      failed.push(market.name);
+    }
+    completed++;
+    if (focusLoadingStatus) {
+      focusLoadingStatus.textContent = `Loading 1000-tick history for all markets... (${completed}/${total})`;
+    }
+    // small gap between markets so the public endpoint is not overwhelmed
+    await new Promise(r => setTimeout(r, 250));
+  }
+
   renderFocusMarket(currentFocusMarket);
   updateFocusTickCount(currentFocusMarket);
+
+  historyPreloadRunning = false;
+
+  if (failed.length === 0) {
+    historyPreloadAllDone = true;
+    if (focusLoadingStatus) {
+      focusLoadingStatus.style.color = "var(--green)";
+      focusLoadingStatus.textContent = `✓ All ${total} markets loaded with 1000-tick history.`;
+      setTimeout(() => {
+        if (focusLoadingStatus) {
+          focusLoadingStatus.textContent = "";
+          focusLoadingStatus.style.color = "var(--text-muted)";
+        }
+      }, 5000);
+    }
+  } else {
+    if (focusLoadingStatus) {
+      focusLoadingStatus.style.color = "var(--yellow)";
+      focusLoadingStatus.textContent = `⚠ ${failed.length} market(s) failed (${failed.join(", ")}). Retrying...`;
+    }
+    // auto-retry the whole preload after a delay
+    setTimeout(() => {
+      historyPreloadAllDone = false;
+      preloadAllMarketHistories();
+    }, 6000);
+  }
+}
+
+/* Hard gate — no market is usable for display or trading until its
+   history buffer has been fully loaded (>= 990 ticks). This is what
+   prevents the "25 / 1000" state from ever appearing. */
+function isMarketHistoryReady(symbol) {
+  const s = marketState[symbol];
+  return !!(s && s.historyPrimed && s.digits1000.length >= 990);
 }
 
 let svd = {
-  topMarket: null,
-  topDDS: null,
-  predictedDigit: null,
-  predictionMarket: null,
-  predictionScore: null,
-  predictionReason: null,
-  predictionStats: null,
-  rankedMarkets: [],
-  signalCreatedAt: null,
-  signalTickIndex: null,
-  scanning: false,
-  analyzing: false
+  topMarket: null, topDDS: null, predictedDigit: null, predictionMarket: null,
+  predictionScore: null, predictionReason: null, predictionStats: null,
+  rankedMarkets: [], signalCreatedAt: null, signalTickIndex: null,
+  scanning: false, analyzing: false
 };
 let s10 = { winsInCycle: 0, cycleStarted: false };
 
-let ou = {
-  rankedResults: [],
-  prediction: null,
-  state: "NONE",
-  signalTickIndex: null,
-  confirmTicksSeen: 0,
-  scanning: false
-};
+let ou = { rankedResults: [], prediction: null, state: "NONE", signalTickIndex: null, confirmTicksSeen: 0, scanning: false };
 let s11 = { winsInCycle: 0, cycleStarted: false, recovering: false };
 
-let mt = {
-  rankedResults: [],
-  prediction: null,
-  state: "NONE",
-  signalTickIndex: null,
-  scanning: false
-};
+let mt = { rankedResults: [], prediction: null, state: "NONE", signalTickIndex: null, scanning: false };
 let s12 = { cycleStarted: false };
 
-let eo = {
-  rankedResults: [],
-  prediction: null,
-  state: "NONE",
-  signalTickIndex: null,
-  scanning: false
-};
+let eo = { rankedResults: [], prediction: null, state: "NONE", signalTickIndex: null, scanning: false };
 let s13 = { cycleStarted: false };
 
 let publicWebSocket = null;
 let demoTradingWebSocket = null;
 let manualDisconnect = false;
-let demoPingInterval = null;
-let publicPingInterval = null;
 let demoReconnectTimer = null;
 let publicReconnectTimer = null;
 
@@ -1724,21 +1541,12 @@ const marketState = {};
 
 MARKETS.forEach(market => {
   marketState[market.symbol] = {
-    symbol: market.symbol,
-    name: market.name,
-    decimals: market.decimals,
-    digits: [],
-    digits10: [],
-    digits1000: [],
+    symbol: market.symbol, name: market.name, decimals: market.decimals,
+    digits: [], digits10: [], digits1000: [],
     historyPrimed: false,
-    lastQuote: "—",
-    lastDigit: "—",
-    tickCount: 0,
-    status: "WAITING",
-    candidate: false,
-    watching: false,
-    watchDigit: null,
-    watchCount: 0
+    lastQuote: "—", lastDigit: "—", tickCount: 0,
+    status: "WAITING", candidate: false, watching: false,
+    watchDigit: null, watchCount: 0
   };
 });
 
@@ -1754,10 +1562,10 @@ const STRATEGY_DESCRIPTIONS = {
   "cold-digit-differ-30": "Volatility 75 (1s) only — scans the last 30 ticks, finds the least-frequent digit, and enters Differ on it every cycle",
   "under7-spike-reversion": "Volatility 50 only — fires Under 7 whenever the latest tick lands on 7, 8, or 9",
   "over0-digit-scan": "trades only the market picked in Focus Market — once digits 0, 1 & 2 are all below 10.5% it enters Over 0 on the most-appearing digit; stops the engine after 3 wins, or after one martingale recovery trade following a loss, so you can pick a new market",
-  "differ-deviation": "trades the market and digit from Scan Volatility Deviation → Differ; enters Differ on the predicted digit immediately on the first free tick after Start Auto Trade (no waiting for the digit to appear), then keeps martingaling on a loss (no stop) until it reaches 3 total wins, then stops so you can scan again",
+  "differ-deviation": "trades the market and digit from Scan Volatility Deviation → Differ; enters Differ on the predicted digit immediately on the first free tick after Start Auto Trade, then keeps martingaling on a loss (no stop) until it reaches 3 total wins, then stops so you can scan again",
   "over-under-deviation": "trades the market and direction from Scan Volatility Deviation → Over/Under: an OVER prediction trades Over 0 (Over 1 as the martingale trade after a loss), an UNDER prediction trades Under 9 (Under 8 as the martingale trade after a loss); keeps martingaling on a loss (no stop) until it reaches 3 total wins, then stops so you can scan again",
-  "match-deviation": "trades the market and digit from Scan Volatility Deviation → Match; enters Digit Match on the predicted digit immediately on the first free tick after Start Auto Trade — no waiting, no confirmation, no minimum trade count — then keeps martingaling on a loss (no stop) until the very first win, at which point it stops so you can scan again",
-  "even-odd-deviation": "trades the market and side from Scan Volatility Deviation → Even/Odd; enters Digit Even/Odd on the predicted side immediately on the first free tick after Start Auto Trade — no waiting, no confirmation, no minimum trade count — and keeps trading that same side continuously, martingaling on a loss and resetting to base stake on a win, until you stop the engine yourself or Take Profit / Stop Loss is hit"
+  "match-deviation": "trades the market and digit from Scan Volatility Deviation → Match; enters Digit Match on the predicted digit immediately on the first free tick after Start Auto Trade, then keeps martingaling on a loss (no stop) until the very first win, at which point it stops so you can scan again",
+  "even-odd-deviation": "trades the market and side from Scan Volatility Deviation → Even/Odd; enters Digit Even/Odd on the predicted side immediately on the first free tick after Start Auto Trade, and keeps trading that same side continuously until you stop the engine yourself or Take Profit / Stop Loss is hit"
 };
 
 let lastStrategyValue = strategySelect ? strategySelect.value : "triple-differ";
@@ -1830,7 +1638,7 @@ function updateMarketFeed(symbol) {
   const card = $(`market-${symbol}`);
   if (quote) quote.textContent = state.lastQuote;
   if (digit) digit.textContent = state.lastDigit;
-  if (ticks) ticks.textContent = `${state.tickCount} T`;
+  if (ticks) ticks.textContent = `${state.digits1000.length} T`;
   if (status) status.textContent = state.status;
   if (card) card.classList.toggle("locked", !!(globalLock && globalLock.symbol === symbol));
 }
@@ -1849,7 +1657,7 @@ function initDigitDistGrid() {
   digitDistGrid.innerHTML = Array.from({ length: 10 }, (_, d) => `
     <div class="digit-circle" id="digit-circle-${d}">
       <span class="dc-num">${d}</span>
-      <span class="dc-pct" id="dc-pct-${d}">0.0%</span>
+      <span class="dc-pct" id="dc-pct-${d}">—</span>
     </div>
   `).join("");
 }
@@ -1858,13 +1666,16 @@ function renderDigitDistribution(symbol, lastDigit) {
   const state = marketState[symbol];
   if (!state || !digitDistGrid) return;
 
+  // If the market's history hasn't loaded yet, show em-dashes (not
+  // percentages built from a partial buffer).
+  const ready = isMarketHistoryReady(symbol);
   const counts = new Array(10).fill(0);
   state.digits1000.forEach(d => { if (d >= 0 && d <= 9) counts[d]++; });
   const total = state.digits1000.length;
   const percentages = counts.map(c => (total ? (c / total) * 100 : 0));
 
   let highIdx = -1, lowIdx = -1;
-  if (total > 0) {
+  if (ready && total > 0) {
     highIdx = percentages.indexOf(Math.max(...percentages));
     lowIdx = percentages.indexOf(Math.min(...percentages));
     if (highIdx === lowIdx) { highIdx = -1; lowIdx = -1; }
@@ -1873,11 +1684,11 @@ function renderDigitDistribution(symbol, lastDigit) {
   for (let d = 0; d <= 9; d++) {
     const circle = $(`digit-circle-${d}`);
     const pctEl = $(`dc-pct-${d}`);
-    if (pctEl) pctEl.textContent = `${percentages[d].toFixed(1)}%`;
+    if (pctEl) pctEl.textContent = ready ? `${percentages[d].toFixed(1)}%` : "—";
     if (!circle) continue;
-    circle.classList.toggle("highest", d === highIdx);
-    circle.classList.toggle("lowest", d === lowIdx);
-    circle.classList.toggle("active-cursor", lastDigit !== null && Number(lastDigit) === d);
+    circle.classList.toggle("highest", ready && d === highIdx);
+    circle.classList.toggle("lowest", ready && d === lowIdx);
+    circle.classList.toggle("active-cursor", ready && lastDigit !== null && Number(lastDigit) === d);
   }
 }
 
@@ -1919,7 +1730,7 @@ function fetchLast1000Ticks(symbol) {
       settled = true;
       try { ws.close(); } catch (e) {}
       reject(new Error("Timed out loading tick history."));
-    }, 20000);
+    }, 15000);
 
     ws.addEventListener("open", () => {
       ws.send(JSON.stringify({
@@ -1957,27 +1768,12 @@ async function ensureMarketHistoryPrimed(symbol) {
   const market = MARKETS.find(m => m.symbol === symbol);
   const state = marketState[symbol];
   if (!market || !state) return false;
-  if (state.historyPrimed && state.digits1000.length >= 990) return true;
+  if (isMarketHistoryReady(symbol)) return true;
 
-  try {
-    const history = await fetchLast1000Ticks(symbol);
-    const prices = history.prices || [];
-    const digits = [];
-    prices.forEach(p => {
-      const q = getFinalDigit(p, state.decimals);
-      if (q) digits.push(Number(q.finalDigit));
-    });
-    state.digits1000 = digits.slice(-1000);
-    state.historyPrimed = true;
-
-    if (prices.length) {
-      const q = getFinalDigit(prices[prices.length - 1], state.decimals);
-      if (q) { state.lastQuote = q.formattedQuote; state.lastDigit = q.finalDigit; }
-    }
-    return true;
-  } catch (err) {
-    return false;
-  }
+  const res = await fetchLast1000TicksWithRetry(symbol);
+  if (!res.ok) return false;
+  applyHistoryToMarket(symbol, res.prices);
+  return state.historyPrimed;
 }
 
 async function primeFocusMarketHistory(symbol) {
@@ -1986,13 +1782,20 @@ async function primeFocusMarketHistory(symbol) {
   if (!market || !state || state.historyPrimed) return;
 
   if (focusLoadingStatus && currentFocusMarket === symbol) {
+    focusLoadingStatus.style.color = "var(--text-sub)";
     focusLoadingStatus.textContent = `Loading last 1000 ticks for ${market.name}...`;
   }
 
   const ok = await ensureMarketHistoryPrimed(symbol);
 
   if (focusLoadingStatus && currentFocusMarket === symbol) {
-    focusLoadingStatus.textContent = ok ? "" : "⚠ Could not reach the Deriv history service — showing live ticks only.";
+    if (ok) {
+      focusLoadingStatus.style.color = "var(--text-muted)";
+      focusLoadingStatus.textContent = "";
+    } else {
+      focusLoadingStatus.style.color = "var(--red)";
+      focusLoadingStatus.textContent = "⚠ Could not load 1000-tick history for this market. Retrying in background...";
+    }
   }
 
   if (currentFocusMarket === symbol) renderFocusMarket(symbol);
@@ -2032,11 +1835,8 @@ const SVD_SIGNIFICANCE_ALPHA = 0.2 / 10;
 const SVD_MAX_SIGNAL_TICKS = 20;
 
 const SVD_MARKET_WEIGHTS = {
-  deviation:       0.25,
-  reversion:       0.35,
-  consistency:     0.20,
-  currentAgreement:0.15,
-  sample:          0.05
+  deviation: 0.25, reversion: 0.35, consistency: 0.20,
+  currentAgreement: 0.15, sample: 0.05
 };
 
 const SIGNAL_GRADE_BANDS = [
@@ -2048,9 +1848,7 @@ const SIGNAL_GRADE_BANDS = [
 ];
 
 function classifySignalScore(score0to100) {
-  for (const band of SIGNAL_GRADE_BANDS) {
-    if (score0to100 >= band.min) return band;
-  }
+  for (const band of SIGNAL_GRADE_BANDS) if (score0to100 >= band.min) return band;
   return SIGNAL_GRADE_BANDS[SIGNAL_GRADE_BANDS.length - 1];
 }
 
@@ -2071,8 +1869,7 @@ function logGamma(x) {
 
 function lowerRegularizedGammaSeries(a, x) {
   if (x <= 0) return 0;
-  let sum = 1 / a;
-  let term = sum;
+  let sum = 1 / a, term = sum;
   for (let n = 1; n < 500; n++) {
     term *= x / (a + n);
     sum += term;
@@ -2083,10 +1880,7 @@ function lowerRegularizedGammaSeries(a, x) {
 
 function upperRegularizedGammaCF(a, x) {
   const FPMIN = 1e-300;
-  let b = x + 1 - a;
-  let c = 1 / FPMIN;
-  let d = 1 / b;
-  let h = d;
+  let b = x + 1 - a, c = 1 / FPMIN, d = 1 / b, h = d;
   for (let i = 1; i < 500; i++) {
     const an = -i * (i - a);
     b += 2;
@@ -2105,9 +1899,7 @@ function upperRegularizedGammaCF(a, x) {
 function regularizedGammaQ(a, x) {
   if (x < 0 || a <= 0) return NaN;
   if (x === 0) return 1;
-  return x < a + 1
-    ? 1 - lowerRegularizedGammaSeries(a, x)
-    : upperRegularizedGammaCF(a, x);
+  return x < a + 1 ? 1 - lowerRegularizedGammaSeries(a, x) : upperRegularizedGammaCF(a, x);
 }
 
 function computeChiSquarePValue(x, df) {
@@ -2170,8 +1962,7 @@ function computeGroupedDeviation(symbol) {
   const middlePct = sumPct(SVD_MID_DIGITS);
   const highPct = sumPct(SVD_HIGH_DIGITS);
   return {
-    symbol,
-    lowPct, middlePct, highPct,
+    symbol, lowPct, middlePct, highPct,
     lowDeviation: lowPct - 0.40,
     middleDeviation: middlePct - 0.20,
     highDeviation: highPct - 0.40
@@ -2192,12 +1983,10 @@ function computeDDSForMarket(symbol) {
 }
 
 function computeCurrentWindowProfile(symbol, digit) {
-  return SVD_CURRENT_WINDOWS
-    .map(w => {
-      const dev = computeDigitDeviation(symbol, digit, w);
-      return dev ? { window: w, p: dev.p, deviation: dev.digitDeviation } : null;
-    })
-    .filter(Boolean);
+  return SVD_CURRENT_WINDOWS.map(w => {
+    const dev = computeDigitDeviation(symbol, digit, w);
+    return dev ? { window: w, p: dev.p, deviation: dev.digitDeviation } : null;
+  }).filter(Boolean);
 }
 
 function isCurrentlyUnderrepresented(symbol, digit) {
@@ -2219,17 +2008,12 @@ function analyzeHistoricalReversion(symbol, digit) {
   const horizonStats = {};
   SVD_HISTORY_HORIZONS.forEach(h => { horizonStats[h] = { events: 0, hits: 0, possible: 0 }; });
   let totalEvents = 0;
-
-  let lastSpacedIndex = -Infinity;
-  let spacedHits = 0;
-  let spacedPossible = 0;
-  let spacedEvents = 0;
+  let lastSpacedIndex = -Infinity, spacedHits = 0, spacedPossible = 0, spacedEvents = 0;
 
   for (let i = W; i < historyEnd - maxHorizon; i++) {
     const context = buf.slice(i - W, i);
     const freq = context.filter(d => d === digit).length / W;
     if (freq - 0.10 > SVD_UNDER_THRESHOLD) continue;
-
     totalEvents++;
     SVD_HISTORY_HORIZONS.forEach(h => {
       const future = buf.slice(i, i + h);
@@ -2238,7 +2022,6 @@ function analyzeHistoricalReversion(symbol, digit) {
       horizonStats[h].hits += hits;
       horizonStats[h].possible += future.length;
     });
-
     if (i - lastSpacedIndex >= SVD_HISTORY_PRIMARY_HORIZON) {
       const future = buf.slice(i, i + SVD_HISTORY_PRIMARY_HORIZON);
       spacedHits += future.filter(d => d === digit).length;
@@ -2258,15 +2041,12 @@ function analyzeHistoricalReversion(symbol, digit) {
   const primary = horizons.find(h => h.horizon === SVD_HISTORY_PRIMARY_HORIZON) || null;
   const primarySign = primary && primary.liftPct !== null ? Math.sign(primary.liftPct) : 0;
   const validHorizons = horizons.filter(h => h.liftPct !== null);
-  const agreeing = primarySign === 0
-    ? 0
-    : validHorizons.filter(h => Math.sign(h.liftPct) === primarySign).length;
+  const agreeing = primarySign === 0 ? 0 : validHorizons.filter(h => Math.sign(h.liftPct) === primarySign).length;
   const reappearanceConsistency = validHorizons.length ? agreeing / validHorizons.length : 0;
 
   const sortedLifts = validHorizons.map(h => h.liftPct).sort((a, b) => a - b);
   const medianLiftPct = sortedLifts.length
-    ? (sortedLifts.length % 2
-        ? sortedLifts[(sortedLifts.length - 1) / 2]
+    ? (sortedLifts.length % 2 ? sortedLifts[(sortedLifts.length - 1) / 2]
         : (sortedLifts[sortedLifts.length / 2 - 1] + sortedLifts[sortedLifts.length / 2]) / 2)
     : null;
 
@@ -2274,19 +2054,12 @@ function analyzeHistoricalReversion(symbol, digit) {
   const isSignificant = spacedEvents >= MIN_HISTORICAL_EVENTS && pValue < SVD_SIGNIFICANCE_ALPHA;
 
   return {
-    symbol,
-    digit,
-    events: totalEvents,
-    spacedEvents,
-    pValue,
-    horizons,
+    symbol, digit, events: totalEvents, spacedEvents, pValue, horizons,
     primaryHorizon: SVD_HISTORY_PRIMARY_HORIZON,
     primaryRate: primary ? primary.rate : null,
     primaryLiftPct: primary ? primary.liftPct : null,
     positiveResponseRate: primary ? primary.rate : null,
-    reappearanceConsistency,
-    medianLiftPct,
-    sufficientEvidence: isSignificant
+    reappearanceConsistency, medianLiftPct, sufficientEvidence: isSignificant
   };
 }
 
@@ -2300,46 +2073,35 @@ function computeDigitPredictionScore(symbol, digit) {
     : 0;
   const currentDeviationStrength = normalizeClamp(avgCurrentDev * 100, 0, 5);
 
-  const historicalLift = reversion.primaryLiftPct === null
-    ? 0
-    : normalizeClamp(reversion.primaryLiftPct, 0, 10);
+  const historicalLift = reversion.primaryLiftPct === null ? 0 : normalizeClamp(reversion.primaryLiftPct, 0, 10);
   const historicalConsistency = reversion.reappearanceConsistency || 0;
 
   const hasEvidence = reversion.spacedEvents >= MIN_HISTORICAL_EVENTS
-    && reversion.primaryLiftPct !== null
-    && reversion.primaryLiftPct > 0;
+    && reversion.primaryLiftPct !== null && reversion.primaryLiftPct > 0;
 
   const sampleReliability = hasEvidence
     ? 0.35 + 0.65 * normalizeClamp(reversion.spacedEvents, MIN_HISTORICAL_EVENTS, SVD_FULL_HISTORICAL_EVENTS)
     : 0;
-  const sigBoost = reversion.pValue < SVD_SIGNIFICANCE_ALPHA ? 1
-    : reversion.pValue < 0.2 ? 0.8
-    : 0.6;
+  const sigBoost = reversion.pValue < SVD_SIGNIFICANCE_ALPHA ? 1 : reversion.pValue < 0.2 ? 0.8 : 0.6;
 
   const reversionScore = hasEvidence
     ? currentDeviationStrength * historicalLift * historicalConsistency * sampleReliability * sigBoost
     : 0;
 
   return {
-    symbol,
-    digit,
+    symbol, digit,
     currentlyUnderrepresented: current.qualifies,
     currentWindowAgreement: current.agreementCount,
-    currentDeviationStrength,
-    historicalLift,
-    historicalConsistency,
-    sampleReliability,
-    events: reversion.spacedEvents,
-    rawObservedEvents: reversion.events,
-    pValue: reversion.pValue,
-    primaryLiftPct: reversion.primaryLiftPct,
+    currentDeviationStrength, historicalLift, historicalConsistency, sampleReliability,
+    events: reversion.spacedEvents, rawObservedEvents: reversion.events,
+    pValue: reversion.pValue, primaryLiftPct: reversion.primaryLiftPct,
     positiveResponseRate: reversion.positiveResponseRate,
-    hasEvidence,
-    reversionScore
+    hasEvidence, reversionScore
   };
 }
 
 function computeMarketDeviationScore(symbol) {
+  if (!isMarketHistoryReady(symbol)) return null;   // hard gate
   const dds = computeDDSForMarket(symbol);
   if (!dds || dds.total < SVD_MIN_SAMPLE_TICKS) return null;
   const grouped = computeGroupedDeviation(symbol);
@@ -2359,11 +2121,11 @@ function computeMarketDeviationScore(symbol) {
   const sampleScore = normalizeClamp(dds.total, SVD_MIN_SAMPLE_TICKS, SVD_SAMPLE_SIZE);
 
   const finalScore =
-    deviationScore        * SVD_MARKET_WEIGHTS.deviation +
-    reversionScore         * SVD_MARKET_WEIGHTS.reversion +
-    consistencyScore       * SVD_MARKET_WEIGHTS.consistency +
-    currentAgreementScore  * SVD_MARKET_WEIGHTS.currentAgreement +
-    sampleScore             * SVD_MARKET_WEIGHTS.sample;
+    deviationScore * SVD_MARKET_WEIGHTS.deviation +
+    reversionScore * SVD_MARKET_WEIGHTS.reversion +
+    consistencyScore * SVD_MARKET_WEIGHTS.consistency +
+    currentAgreementScore * SVD_MARKET_WEIGHTS.currentAgreement +
+    sampleScore * SVD_MARKET_WEIGHTS.sample;
 
   const gradeScore = Math.round(finalScore * 100);
   const gradeBand = classifySignalScore(gradeScore);
@@ -2371,12 +2133,8 @@ function computeMarketDeviationScore(symbol) {
   const marketMeta = MARKETS.find(m => m.symbol === symbol);
 
   return {
-    symbol,
-    marketName: marketMeta ? marketMeta.name : symbol,
-    totalTicks: dds.total,
-    dds: dds.dds,
-    pValue: dds.pValue,
-    effectSize: dds.effectSize,
+    symbol, marketName: marketMeta ? marketMeta.name : symbol, totalTicks: dds.total,
+    dds: dds.dds, pValue: dds.pValue, effectSize: dds.effectSize,
     lowPct: grouped ? grouped.lowPct : null,
     middlePct: grouped ? grouped.middlePct : null,
     highPct: grouped ? grouped.highPct : null,
@@ -2385,14 +2143,8 @@ function computeMarketDeviationScore(symbol) {
     historicalLift: best ? best.primaryLiftPct : null,
     historicalConsistency: best ? best.historicalConsistency : null,
     historicalEvents: best ? best.events : 0,
-    deviationScore,
-    reversionScore,
-    consistencyScore,
-    sampleScore,
-    finalScore,
-    gradeScore,
-    grade: gradeBand.grade,
-    tradable: gradeBand.tradable,
+    deviationScore, reversionScore, consistencyScore, sampleScore,
+    finalScore, gradeScore, grade: gradeBand.grade, tradable: gradeBand.tradable,
     eligible
   };
 }
@@ -2427,15 +2179,9 @@ function isPredictionStillValid() {
 }
 
 function invalidatePrediction(reason) {
-  svd.predictedDigit = null;
-  svd.predictionMarket = null;
-  svd.predictionGrade = null;
-  svd.predictionTradable = null;
-  svd.predictionScore = null;
-  svd.predictionReason = reason || null;
-  svd.predictionStats = null;
-  svd.signalCreatedAt = null;
-  svd.signalTickIndex = null;
+  svd.predictedDigit = null; svd.predictionMarket = null; svd.predictionGrade = null;
+  svd.predictionTradable = null; svd.predictionScore = null; svd.predictionReason = reason || null;
+  svd.predictionStats = null; svd.signalCreatedAt = null; svd.signalTickIndex = null;
 }
 
 async function scanAllVolatilities() {
@@ -2443,12 +2189,9 @@ async function scanAllVolatilities() {
   svd.scanning = true;
   invalidatePrediction();
   svd.rankedMarkets = [];
-  s10.winsInCycle = 0;
-  s10.cycleStarted = false;
-  s12.cycleStarted = false;
-  s13.cycleStarted = false;
-  invalidateMatchPrediction();
-  invalidateEvenOddPrediction();
+  s10.winsInCycle = 0; s10.cycleStarted = false;
+  s12.cycleStarted = false; s13.cycleStarted = false;
+  invalidateMatchPrediction(); invalidateEvenOddPrediction();
 
   scanAllVolatilitiesBtn.disabled = true;
   differBtn.disabled = true;
@@ -2473,15 +2216,11 @@ async function scanAllVolatilities() {
     await ensureMarketHistoryPrimed(market.symbol);
     const score = computeMarketDeviationScore(market.symbol);
     if (score) scored.push(score); else skippedThin.push(market.name);
-
     const pct = Math.round(((i + 1) / total) * 100);
     if (svdScanProgressBar) svdScanProgressBar.style.width = pct + "%";
     if (svdScanProgressLabel) svdScanProgressLabel.textContent = `Scanning ${pct}%… (${market.name})`;
-
     const elapsed = performance.now() - stepStart;
-    if (elapsed < SVD_SCAN_STEP_MIN_MS) {
-      await new Promise(r => setTimeout(r, SVD_SCAN_STEP_MIN_MS - elapsed));
-    }
+    if (elapsed < SVD_SCAN_STEP_MIN_MS) await new Promise(r => setTimeout(r, SVD_SCAN_STEP_MIN_MS - elapsed));
   }
 
   if (svdScanProgressWrap) svdScanProgressWrap.style.display = "none";
@@ -2492,7 +2231,7 @@ async function scanAllVolatilities() {
     if (svdResult) {
       svdResult.style.display = "block";
       svdTopMarket.textContent = "No fully-sampled market yet";
-      svdTopScore.textContent = `Every market needs ${SVD_MIN_SAMPLE_TICKS}+ real ticks before it's fairly comparable — still building (${skippedThin.length} market(s) thin). Try again shortly.`;
+      svdTopScore.textContent = `Every market needs ${SVD_MIN_SAMPLE_TICKS}+ real ticks before it's fairly comparable — still loading (${skippedThin.length} market(s) thin). Try again shortly.`;
     }
     return;
   }
@@ -2569,8 +2308,7 @@ async function runDifferAnalysis() {
   svd.signalCreatedAt = Date.now();
   svd.signalTickIndex = state ? state.tickCount : null;
 
-  s10.winsInCycle = 0;
-  s10.cycleStarted = false;
+  s10.winsInCycle = 0; s10.cycleStarted = false;
 
   if (svdPrediction) {
     svdPrediction.style.display = "block";
@@ -2581,6 +2319,9 @@ async function runDifferAnalysis() {
 if (scanAllVolatilitiesBtn) scanAllVolatilitiesBtn.addEventListener("click", scanAllVolatilities);
 if (differBtn) differBtn.addEventListener("click", runDifferAnalysis);
 
+/* ============================================================
+   OVER / UNDER BARRIER DEVIATION ENGINE
+   ============================================================ */
 const OU_BARRIERS = [
   { key: "over3",  side: "OVER",  label: "OVER 3",  barrier: 3, baseline: 0.60, qualifies: d => d >= 4 },
   { key: "under6", side: "UNDER", label: "UNDER 6", barrier: 6, baseline: 0.60, qualifies: d => d <= 5 },
@@ -2591,22 +2332,16 @@ const OU_BARRIERS = [
 const OU_WINDOWS = [25, 50, 100, 250, 500, 1000];
 const OU_PRIMARY_WINDOW = 50;
 const OU_MIN_SAMPLE_TICKS = SVD_MIN_SAMPLE_TICKS;
-
 const OU_MIN_HISTORICAL_EVENTS  = 6;
 const OU_FULL_HISTORICAL_EVENTS = 30;
 const OU_HISTORY_HORIZONS        = [1, 2, 5, 10, 20];
 const OU_HISTORY_PRIMARY_HORIZON = 10;
 const OU_CURRENT_ZONE            = 250;
-
 const OU_MAX_SIGNAL_TICKS   = 20;
 const OU_CONFIRMATION_TICKS = 2;
-
 const OU_SCORE_WEIGHTS = {
-  deviation:       0.30,
-  historical:      0.35,
-  consistency:     0.20,
-  windowAgreement: 0.10,
-  sample:          0.05
+  deviation: 0.30, historical: 0.35, consistency: 0.20,
+  windowAgreement: 0.10, sample: 0.05
 };
 
 function computeBarrierRate(symbol, qualifies, windowSize) {
@@ -2631,12 +2366,10 @@ function computeBarrierDeviation(symbol, barrierDef, windowSize) {
 }
 
 function computeBarrierWindowProfile(symbol, barrierDef) {
-  return OU_WINDOWS
-    .map(w => {
-      const dev = computeBarrierDeviation(symbol, barrierDef, w);
-      return dev ? { window: w, rate: dev.rate, deviation: dev.deviation } : null;
-    })
-    .filter(Boolean);
+  return OU_WINDOWS.map(w => {
+    const dev = computeBarrierDeviation(symbol, barrierDef, w);
+    return dev ? { window: w, rate: dev.rate, deviation: dev.deviation } : null;
+  }).filter(Boolean);
 }
 
 function computeBarrierStatisticalSignificance(symbol, barrierDef, windowSize) {
@@ -2684,13 +2417,11 @@ function analyzeHistoricalBarrierResponse(symbol, barrierDef) {
     const hits = context.filter(barrierDef.qualifies).length;
     const dev = hits / W - barrierDef.baseline;
     if (Math.sign(dev) !== currentSign) continue;
-
     OU_HISTORY_HORIZONS.forEach(h => {
       const future = buf.slice(i, i + h);
       horizonStats[h].hits += future.filter(barrierDef.qualifies).length;
       horizonStats[h].possible += future.length;
     });
-
     if (i - lastSpacedIndex >= OU_HISTORY_PRIMARY_HORIZON) {
       const future = buf.slice(i, i + OU_HISTORY_PRIMARY_HORIZON);
       spacedHits += future.filter(barrierDef.qualifies).length;
@@ -2739,6 +2470,7 @@ function computeBarrierConsistency(symbol, barrierDef) {
 }
 
 function computeOverUnderSignalScore(symbol, barrierDef) {
+  if (!isMarketHistoryReady(symbol)) return null;   // hard gate
   const currentDev = computeBarrierDeviation(symbol, barrierDef, OU_PRIMARY_WINDOW);
   if (!currentDev || currentDev.total < 30) return null;
 
@@ -2767,36 +2499,27 @@ function computeOverUnderSignalScore(symbol, barrierDef) {
   const sampleScore = normalizeClamp(sampleFull ? sampleFull.total : 0, OU_MIN_SAMPLE_TICKS * 0.5, OU_MIN_SAMPLE_TICKS);
 
   const total01 =
-    deviationScore       * OU_SCORE_WEIGHTS.deviation +
-    historicalScore       * OU_SCORE_WEIGHTS.historical +
-    consistencyScore       * OU_SCORE_WEIGHTS.consistency +
-    windowAgreementScore    * OU_SCORE_WEIGHTS.windowAgreement +
-    sampleScore              * OU_SCORE_WEIGHTS.sample;
+    deviationScore * OU_SCORE_WEIGHTS.deviation +
+    historicalScore * OU_SCORE_WEIGHTS.historical +
+    consistencyScore * OU_SCORE_WEIGHTS.consistency +
+    windowAgreementScore * OU_SCORE_WEIGHTS.windowAgreement +
+    sampleScore * OU_SCORE_WEIGHTS.sample;
 
   const score = Math.round(total01 * 100);
   const gradeBand = classifySignalScore(score);
   const marketMeta = MARKETS.find(m => m.symbol === symbol);
 
   return {
-    symbol,
-    marketName: marketMeta ? marketMeta.name : symbol,
-    barrierKey: barrierDef.key,
-    label: barrierDef.label,
+    symbol, marketName: marketMeta ? marketMeta.name : symbol,
+    barrierKey: barrierDef.key, label: barrierDef.label,
     contractType: barrierDef.side === "UNDER" ? "DIGITUNDER" : "DIGITOVER",
     contractBarrier: barrierDef.barrier,
-    currentRate: currentDev.rate,
-    baselineRate: barrierDef.baseline,
-    deviation: currentDev.deviation,
-    historicalEvents: history ? history.events : 0,
-    historicalReliability,
+    currentRate: currentDev.rate, baselineRate: barrierDef.baseline, deviation: currentDev.deviation,
+    historicalEvents: history ? history.events : 0, historicalReliability,
     historicalBehavior: history ? history.behavior : "NO_RELIABLE_EFFECT",
     historicalLiftPct: history ? history.primaryLiftPct : null,
-    windowAgreementScore,
-    windowsAgreeing: windowAgreement.agreeing,
-    windowsTotal: windowAgreement.total,
-    score,
-    grade: gradeBand.grade,
-    tradable: gradeBand.tradable
+    windowAgreementScore, windowsAgreeing: windowAgreement.agreeing, windowsTotal: windowAgreement.total,
+    score, grade: gradeBand.grade, tradable: gradeBand.tradable
   };
 }
 
@@ -2815,9 +2538,7 @@ async function rankOverUnderMarkets(onStep) {
   return results;
 }
 
-function selectBestOverUnderPrediction(results) {
-  return results.length ? results[0] : null;
-}
+function selectBestOverUnderPrediction(results) { return results.length ? results[0] : null; }
 
 function armOverUnderPrediction(result, symbol) {
   ou.prediction = result;
@@ -2844,21 +2565,15 @@ function isOverUnderPredictionStillValid() {
 }
 
 function invalidateOverUnderPrediction(reason) {
-  ou.prediction = null;
-  ou.state = "NONE";
+  ou.prediction = null; ou.state = "NONE";
   ou.predictionReason = reason || null;
-  ou.signalTickIndex = null;
-  ou.confirmTicksSeen = 0;
+  ou.signalTickIndex = null; ou.confirmTicksSeen = 0;
 }
 
 function confirmOverUnderPrediction() {
   ou.confirmTicksSeen++;
-  if (ou.confirmTicksSeen >= OU_CONFIRMATION_TICKS) {
-    ou.state = "CONFIRMED";
-    return true;
-  }
-  ou.state = "CONFIRMING";
-  return false;
+  if (ou.confirmTicksSeen >= OU_CONFIRMATION_TICKS) { ou.state = "CONFIRMED"; return true; }
+  ou.state = "CONFIRMING"; return false;
 }
 
 function renderOverUnderPanel() {
@@ -2876,9 +2591,7 @@ async function runOverUnderAnalysis() {
   if (ou.scanning) return;
   ou.scanning = true;
   invalidateOverUnderPrediction();
-  s11.winsInCycle = 0;
-  s11.cycleStarted = false;
-  s11.recovering = false;
+  s11.winsInCycle = 0; s11.cycleStarted = false; s11.recovering = false;
 
   ouBtn.disabled = true;
   if (ouResult) ouResult.style.display = "none";
@@ -2918,32 +2631,31 @@ async function runOverUnderAnalysis() {
 
 if (ouBtn) ouBtn.addEventListener("click", runOverUnderAnalysis);
 
+/* ============================================================
+   MATCH DEVIATION ENGINE
+   ============================================================ */
 const MATCH_DIGITS         = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const MATCH_BASELINE       = 0.10;
 const MATCH_WINDOWS        = [25, 50, 100, 250, 500, 1000];
 const MATCH_PRIMARY_WINDOW = 50;
 const MATCH_MIN_SAMPLE_TICKS = SVD_MIN_SAMPLE_TICKS;
-
 const MATCH_MIN_HISTORICAL_EVENTS  = 6;
 const MATCH_FULL_HISTORICAL_EVENTS = 30;
 const MATCH_HISTORY_HORIZONS         = [1, 2, 5, 10, 20];
 const MATCH_HISTORY_PRIMARY_HORIZON  = 10;
 const MATCH_CURRENT_ZONE             = 250;
-
 const MATCH_STATE_WINDOWS = [25, 50, 100, 250];
 const MATCH_BIN_BOUNDARIES_PP = [-8, -5, -3, 3, 5, 8];
+
 function binIndex(devPP, boundaries) {
   for (let i = 0; i < boundaries.length; i++) if (devPP <= boundaries[i]) return i;
   return boundaries.length;
 }
 
 const MATCH_EVENT_QUALITY_BANDS = [
-  { label: "VERY STRONG", min: 150 },
-  { label: "STRONG",      min: 80 },
-  { label: "USABLE",      min: 40 },
-  { label: "LIMITED",     min: 20 },
-  { label: "VERY WEAK",   min: 10 },
-  { label: "INSUFFICIENT",min: 0 }
+  { label: "VERY STRONG", min: 150 }, { label: "STRONG", min: 80 },
+  { label: "USABLE", min: 40 }, { label: "LIMITED", min: 20 },
+  { label: "VERY WEAK", min: 10 }, { label: "INSUFFICIENT", min: 0 }
 ];
 function classifyMatchEventQuality(events) {
   for (const b of MATCH_EVENT_QUALITY_BANDS) if (events >= b.min) return b.label;
@@ -2957,18 +2669,10 @@ const CONDITIONAL_MIN_CLOSE_EVENTS    = 20;
 const CONDITIONAL_MIN_MODERATE_EVENTS = 15;
 const CONDITIONAL_MIN_BROAD_EVENTS    = 10;
 const CONDITIONAL_STATE_MATCH_SCORE = { CLOSE: 1.0, MODERATE: 0.6, BROAD: 0.35, INSUFFICIENT: 0.15 };
-
 const CONDITIONAL_SHRINKAGE_PRIOR_WEIGHT = 10;
-
 const CONDITIONAL_CONFIDENCE_WEIGHTS = {
-  effect:          0.20,
-  reliability:     0.16,
-  consistency:     0.16,
-  sample:          0.14,
-  stateMatch:      0.12,
-  windowAgreement: 0.12,
-  validation:      0.06,
-  structure:       0.04
+  effect: 0.20, reliability: 0.16, consistency: 0.16, sample: 0.14,
+  stateMatch: 0.12, windowAgreement: 0.12, validation: 0.06, structure: 0.04
 };
 const CONDITIONAL_CONFIDENCE_EPS = 0.02;
 
@@ -2983,11 +2687,8 @@ function computeConditionalConfidence(components) {
 }
 
 const CONFIDENCE_BANDS = [
-  { label: "HIGH CONFIDENCE", min: 80 },
-  { label: "GOOD CONFIDENCE", min: 65 },
-  { label: "MODERATE",        min: 50 },
-  { label: "LOW",             min: 35 },
-  { label: "VERY LOW",        min: 0 }
+  { label: "HIGH CONFIDENCE", min: 80 }, { label: "GOOD CONFIDENCE", min: 65 },
+  { label: "MODERATE", min: 50 }, { label: "LOW", min: 35 }, { label: "VERY LOW", min: 0 }
 ];
 function classifyConfidenceBand(score) {
   for (const b of CONFIDENCE_BANDS) if (score >= b.min) return b.label;
@@ -2995,12 +2696,9 @@ function classifyConfidenceBand(score) {
 }
 
 const SIGNAL_QUALITY_TIERS = [
-  { label: "VERY STRONG", min: 85 },
-  { label: "STRONG",      min: 75 },
-  { label: "ACTIVE",      min: 65 },
-  { label: "DEVELOPING",  min: 55 },
-  { label: "WEAK",        min: 40 },
-  { label: "NEUTRAL",     min: 0 }
+  { label: "VERY STRONG", min: 85 }, { label: "STRONG", min: 75 },
+  { label: "ACTIVE", min: 65 }, { label: "DEVELOPING", min: 55 },
+  { label: "WEAK", min: 40 }, { label: "NEUTRAL", min: 0 }
 ];
 function classifySignalTier(score) {
   for (const t of SIGNAL_QUALITY_TIERS) if (score >= t.min) return t.label;
@@ -3024,9 +2722,7 @@ function computeMatchRate(symbol, digit, windowSize) {
   return { total, hits, rate: hits / total };
 }
 
-function computeMatchDistribution(symbol, digit, window) {
-  return computeMatchRate(symbol, digit, window);
-}
+function computeMatchDistribution(symbol, digit, window) { return computeMatchRate(symbol, digit, window); }
 
 function computeMatchDeviation(symbol, digit, windowSize) {
   const r = computeMatchRate(symbol, digit, windowSize);
@@ -3035,12 +2731,10 @@ function computeMatchDeviation(symbol, digit, windowSize) {
 }
 
 function computeMatchWindowProfile(symbol, digit) {
-  return MATCH_WINDOWS
-    .map(w => {
-      const dev = computeMatchDeviation(symbol, digit, w);
-      return dev ? { window: w, rate: dev.rate, deviation: dev.deviation } : null;
-    })
-    .filter(Boolean);
+  return MATCH_WINDOWS.map(w => {
+    const dev = computeMatchDeviation(symbol, digit, w);
+    return dev ? { window: w, rate: dev.rate, deviation: dev.deviation } : null;
+  }).filter(Boolean);
 }
 
 function computeMatchWindowAgreement(symbol, digit) {
@@ -3073,8 +2767,7 @@ function computeMatchStatePersistence(symbol, digit) {
   const agreementFrac = agreeing.length / profile.length;
   const longest = agreeing[agreeing.length - 1];
   const retain = Math.abs(primary.deviation) > 0
-    ? normalizeClamp(Math.abs(longest.deviation) / Math.abs(primary.deviation), 0, 1)
-    : 0;
+    ? normalizeClamp(Math.abs(longest.deviation) / Math.abs(primary.deviation), 0, 1) : 0;
   return { score: agreementFrac * 0.6 + retain * 0.4, agreementFrac, retain, profile, primarySign };
 }
 
@@ -3106,9 +2799,7 @@ function computeMatchHistoricalCondition(symbol, digit, currentState) {
 
   const closeIdx = [], moderateIdx = [], broadIdx = [];
   for (let i = walkStart; i < walkEnd; i++) {
-    let allBinsMatch = true;
-    let primaryBinMatch = false;
-    let primarySignMatch = false;
+    let allBinsMatch = true, primaryBinMatch = false, primarySignMatch = false;
     for (const sv of currentState) {
       const context = buf.slice(i - sv.window, i);
       const hits = context.filter(d => d === digit).length;
@@ -3143,12 +2834,8 @@ function computeMatchHistoricalCondition(symbol, digit, currentState) {
     const rawRate = possible ? hits / possible : null;
     const adjustedRate = (hits + CONDITIONAL_SHRINKAGE_PRIOR_WEIGHT * MATCH_BASELINE) / (possible + CONDITIONAL_SHRINKAGE_PRIOR_WEIGHT);
     return {
-      horizon: h,
-      events: possible,
-      rawRate,
-      adjustedRate,
-      lift: adjustedRate - MATCH_BASELINE,
-      relativeLift: adjustedRate / MATCH_BASELINE,
+      horizon: h, events: possible, rawRate, adjustedRate,
+      lift: adjustedRate - MATCH_BASELINE, relativeLift: adjustedRate / MATCH_BASELINE,
       nextTickRate: h === 1 && nextTickPossible ? nextTickHits / nextTickPossible : null
     };
   });
@@ -3159,8 +2846,7 @@ function computeMatchHistoricalCondition(symbol, digit, currentState) {
 
   const validHorizons = horizons.filter(h => h.events > 0);
   const consistency = validHorizons.length
-    ? validHorizons.filter(h => Math.sign(h.lift) === currentSign).length / validHorizons.length
-    : 0;
+    ? validHorizons.filter(h => Math.sign(h.lift) === currentSign).length / validHorizons.length : 0;
 
   const behavior = !best ? "NO_RELIABLE_EFFECT" : (Math.sign(best.lift) === currentSign ? "CONTINUATION" : "REVERSION");
 
@@ -3195,6 +2881,7 @@ function computeMatchValidation(indices, buf, digit, horizon) {
 }
 
 function computeMatchScore(symbol, digit) {
+  if (!isMarketHistoryReady(symbol)) return null;   // hard gate
   const currentDev = computeMatchDeviation(symbol, digit, MATCH_PRIMARY_WINDOW);
   if (!currentDev || currentDev.total < 30) return null;
 
@@ -3216,7 +2903,6 @@ function computeMatchScore(symbol, digit) {
     (deviationScore * 0.30 + persistence.score * 0.20 + liftMagnitudeScore * 0.35 + windowAgreement.score * 0.15) * 100
   )));
 
-  const currentZ = computeMatchCurrentZ(symbol, digit, MATCH_PRIMARY_WINDOW);
   const effectComponent = normalizeClamp(Math.abs(liftPP), 0, 6);
   const reliabilityComponent = normalizeClamp(-Math.log10(Math.max(condition.pValue, 1e-12)), 0, 3);
   const consistencyComponent = condition.consistency;
@@ -3227,19 +2913,14 @@ function computeMatchScore(symbol, digit) {
   const structureComponent = 1.0;
 
   const confidence = computeConditionalConfidence({
-    effect: effectComponent,
-    reliability: reliabilityComponent,
-    consistency: consistencyComponent,
-    sample: sampleComponent,
-    stateMatch: stateMatchComponent,
-    windowAgreement: windowAgreementComponent,
-    validation: validationComponent,
-    structure: structureComponent
+    effect: effectComponent, reliability: reliabilityComponent,
+    consistency: consistencyComponent, sample: sampleComponent,
+    stateMatch: stateMatchComponent, windowAgreement: windowAgreementComponent,
+    validation: validationComponent, structure: structureComponent
   });
 
   const tradeReadiness = computeTradeReadiness(signalScoreClamped, confidence);
   const status = tradeReadiness >= CONDITIONAL_READINESS_THRESHOLD ? "ARMED" : classifySignalTier(tradeReadiness);
-
   const marketMeta = MARKETS.find(m => m.symbol === symbol);
 
   const why = [];
@@ -3255,36 +2936,24 @@ function computeMatchScore(symbol, digit) {
   why.push(`Confidence: ${confidence}% (${classifyConfidenceBand(confidence)}).`);
 
   return {
-    symbol,
-    marketName: marketMeta ? marketMeta.name : symbol,
-    digit,
-    label: `MATCH ${digit}`,
-    contractType: "DIGITMATCH",
-    currentRate: currentDev.rate,
-    baselineRate: MATCH_BASELINE,
-    deviation: currentDev.deviation,
+    symbol, marketName: marketMeta ? marketMeta.name : symbol,
+    digit, label: `MATCH ${digit}`, contractType: "DIGITMATCH",
+    currentRate: currentDev.rate, baselineRate: MATCH_BASELINE, deviation: currentDev.deviation,
     statePersistence: persistence.score,
-    matchLevel: condition.level,
-    historicalEvents: condition.events,
+    matchLevel: condition.level, historicalEvents: condition.events,
     historicalBehavior: condition.behavior,
     bestHorizon: condition.best ? condition.best.horizon : null,
     conditionalRate: condition.best ? condition.best.adjustedRate : null,
     historicalLiftPct: condition.best ? liftPP : null,
     relativeLift: condition.best ? condition.best.relativeLift : null,
-    consistency: condition.consistency,
-    validation: validation.label,
-    windowAgreementScore: windowAgreement.score,
-    windowsAgreeing: windowAgreement.agreeing,
-    windowsTotal: windowAgreement.total,
-    signalScore: signalScoreClamped,
-    confidence,
+    consistency: condition.consistency, validation: validation.label,
+    windowAgreementScore: windowAgreement.score, windowsAgreeing: windowAgreement.agreeing, windowsTotal: windowAgreement.total,
+    signalScore: signalScoreClamped, confidence,
     confidenceBand: classifyConfidenceBand(confidence),
-    tradeReadiness,
-    status,
+    tradeReadiness, status,
     grade: classifySignalTier(signalScoreClamped),
     tradable: tradeReadiness >= CONDITIONAL_READINESS_THRESHOLD,
-    why,
-    score: signalScoreClamped
+    why, score: signalScoreClamped
   };
 }
 
@@ -3303,9 +2972,7 @@ async function rankMatchCandidates(onStep) {
   return results;
 }
 
-function selectBestMatchPrediction(results) {
-  return results.length ? results[0] : null;
-}
+function selectBestMatchPrediction(results) { return results.length ? results[0] : null; }
 
 function armMatchPrediction(result, symbol) {
   mt.prediction = result;
@@ -3330,9 +2997,7 @@ function isMatchPredictionStillValid() {
 }
 
 function invalidateMatchPrediction(reason) {
-  mt.prediction = null;
-  mt.state = "NONE";
-  mt.signalTickIndex = null;
+  mt.prediction = null; mt.state = "NONE"; mt.signalTickIndex = null;
 }
 function expireMatchPrediction() { invalidateMatchPrediction("expired"); }
 function updateMatchPrediction() { isMatchPredictionStillValid(); }
@@ -3395,6 +3060,9 @@ async function runMatchAnalysis() {
 
 if (matchBtn) matchBtn.addEventListener("click", runMatchAnalysis);
 
+/* ============================================================
+   EVEN / ODD (PARITY) DEVIATION ENGINE
+   ============================================================ */
 const PARITY_SIDES = [
   { key: "EVEN", label: "EVEN", baseline: 0.50, qualifies: d => d % 2 === 0, contractType: "DIGITEVEN" },
   { key: "ODD",  label: "ODD",  baseline: 0.50, qualifies: d => d % 2 === 1, contractType: "DIGITODD"  }
@@ -3403,16 +3071,13 @@ const PARITY_SIDES = [
 const PARITY_WINDOWS        = [25, 50, 100, 250, 500, 1000];
 const PARITY_PRIMARY_WINDOW = 50;
 const PARITY_MIN_SAMPLE_TICKS = SVD_MIN_SAMPLE_TICKS;
-
 const PARITY_MIN_HISTORICAL_EVENTS  = 6;
 const PARITY_FULL_HISTORICAL_EVENTS = 30;
 const PARITY_HISTORY_HORIZONS         = [1, 2, 5, 10, 20];
 const PARITY_HISTORY_PRIMARY_HORIZON  = 10;
 const PARITY_CURRENT_ZONE             = 250;
-
 const PARITY_MAX_SIGNAL_TICKS   = 20;
 const PARITY_CONFIRMATION_TICKS = 2;
-
 const PARITY_STATE_WINDOWS = [25, 50, 100, 250];
 const PARITY_BIN_BOUNDARIES_PP = [-12, -8, -5, 5, 8, 12];
 
@@ -3427,9 +3092,7 @@ function computeParityRate(symbol, qualifies, windowSize) {
   return { total, hits, rate: hits / total };
 }
 
-function computeParityDistribution(symbol, side, windowSize) {
-  return computeParityRate(symbol, side.qualifies, windowSize);
-}
+function computeParityDistribution(symbol, side, windowSize) { return computeParityRate(symbol, side.qualifies, windowSize); }
 
 function computeParityDeviation(symbol, side, windowSize) {
   const r = computeParityRate(symbol, side.qualifies, windowSize);
@@ -3438,12 +3101,10 @@ function computeParityDeviation(symbol, side, windowSize) {
 }
 
 function computeParityWindowProfile(symbol, side) {
-  return PARITY_WINDOWS
-    .map(w => {
-      const dev = computeParityDeviation(symbol, side, w);
-      return dev ? { window: w, rate: dev.rate, deviation: dev.deviation } : null;
-    })
-    .filter(Boolean);
+  return PARITY_WINDOWS.map(w => {
+    const dev = computeParityDeviation(symbol, side, w);
+    return dev ? { window: w, rate: dev.rate, deviation: dev.deviation } : null;
+  }).filter(Boolean);
 }
 
 function computeParityWindowAgreement(symbol, side) {
@@ -3476,8 +3137,7 @@ function computeParityStatePersistence(symbol, side) {
   const agreementFrac = agreeing.length / profile.length;
   const longest = agreeing[agreeing.length - 1];
   const retain = Math.abs(primary.deviation) > 0
-    ? normalizeClamp(Math.abs(longest.deviation) / Math.abs(primary.deviation), 0, 1)
-    : 0;
+    ? normalizeClamp(Math.abs(longest.deviation) / Math.abs(primary.deviation), 0, 1) : 0;
   return { score: agreementFrac * 0.6 + retain * 0.4, agreementFrac, retain, profile, primarySign };
 }
 
@@ -3563,9 +3223,7 @@ function computeParityHistoricalCondition(symbol, side, currentState) {
 
   const closeIdx = [], moderateIdx = [], broadIdx = [];
   for (let i = walkStart; i < walkEnd; i++) {
-    let allBinsMatch = true;
-    let primaryBinMatch = false;
-    let primarySignMatch = false;
+    let allBinsMatch = true, primaryBinMatch = false, primarySignMatch = false;
     for (const sv of currentState) {
       const context = buf.slice(i - sv.window, i);
       const hits = context.filter(side.qualifies).length;
@@ -3599,12 +3257,8 @@ function computeParityHistoricalCondition(symbol, side, currentState) {
     const rawRate = possible ? hits / possible : null;
     const adjustedRate = (hits + CONDITIONAL_SHRINKAGE_PRIOR_WEIGHT * side.baseline) / (possible + CONDITIONAL_SHRINKAGE_PRIOR_WEIGHT);
     return {
-      horizon: h,
-      events: indices.length,
-      rawRate,
-      adjustedRate,
-      lift: adjustedRate - side.baseline,
-      relativeLift: adjustedRate / side.baseline
+      horizon: h, events: indices.length, rawRate, adjustedRate,
+      lift: adjustedRate - side.baseline, relativeLift: adjustedRate / side.baseline
     };
   });
 
@@ -3614,8 +3268,7 @@ function computeParityHistoricalCondition(symbol, side, currentState) {
 
   const validHorizons = horizons.filter(h => h.rawRate !== null);
   const consistency = validHorizons.length
-    ? validHorizons.filter(h => Math.sign(h.lift) === currentSign).length / validHorizons.length
-    : 0;
+    ? validHorizons.filter(h => Math.sign(h.lift) === currentSign).length / validHorizons.length : 0;
 
   const behavior = !best ? "NO_RELIABLE_EFFECT" : (Math.sign(best.lift) === currentSign ? "CONTINUATION" : "REVERSION");
 
@@ -3651,6 +3304,7 @@ function computeParityValidation(indices, buf, side, horizon) {
 }
 
 function computeEvenOddScore(symbol, side) {
+  if (!isMarketHistoryReady(symbol)) return null;   // hard gate
   const currentDev = computeParityDeviation(symbol, side, PARITY_PRIMARY_WINDOW);
   if (!currentDev || currentDev.total < 30) return null;
 
@@ -3683,14 +3337,10 @@ function computeEvenOddScore(symbol, side) {
   const structureComponent = streak.structureQuality;
 
   const confidence = computeConditionalConfidence({
-    effect: effectComponent,
-    reliability: reliabilityComponent,
-    consistency: consistencyComponent,
-    sample: sampleComponent,
-    stateMatch: stateMatchComponent,
-    windowAgreement: windowAgreementComponent,
-    validation: validationComponent,
-    structure: structureComponent
+    effect: effectComponent, reliability: reliabilityComponent,
+    consistency: consistencyComponent, sample: sampleComponent,
+    stateMatch: stateMatchComponent, windowAgreement: windowAgreementComponent,
+    validation: validationComponent, structure: structureComponent
   });
 
   const tradeReadiness = computeTradeReadiness(signalScoreClamped, confidence);
@@ -3710,38 +3360,25 @@ function computeEvenOddScore(symbol, side) {
   why.push(`Confidence: ${confidence}% (${classifyConfidenceBand(confidence)}).`);
 
   return {
-    symbol,
-    marketName: marketMeta ? marketMeta.name : symbol,
-    side: side.key,
-    label: side.label,
-    contractType: side.contractType,
-    currentRate: currentDev.rate,
-    baselineRate: side.baseline,
-    deviation: currentDev.deviation,
+    symbol, marketName: marketMeta ? marketMeta.name : symbol,
+    side: side.key, label: side.label, contractType: side.contractType,
+    currentRate: currentDev.rate, baselineRate: side.baseline, deviation: currentDev.deviation,
     statePersistence: persistence.score,
-    parityLevel: condition.level,
-    historicalEvents: condition.events,
+    parityLevel: condition.level, historicalEvents: condition.events,
     historicalBehavior: condition.behavior,
     bestHorizon: condition.best ? condition.best.horizon : null,
     conditionalRate: condition.best ? condition.best.adjustedRate : null,
     historicalLiftPct: condition.best ? liftPP : null,
     relativeLift: condition.best ? condition.best.relativeLift : null,
-    consistency: condition.consistency,
-    validation: validation.label,
-    windowAgreementScore: windowAgreement.score,
-    windowsAgreeing: windowAgreement.agreeing,
-    windowsTotal: windowAgreement.total,
-    streakQuality: streak.structureQuality,
-    streakLabel: streak.structureLabel,
-    signalScore: signalScoreClamped,
-    confidence,
+    consistency: condition.consistency, validation: validation.label,
+    windowAgreementScore: windowAgreement.score, windowsAgreeing: windowAgreement.agreeing, windowsTotal: windowAgreement.total,
+    streakQuality: streak.structureQuality, streakLabel: streak.structureLabel,
+    signalScore: signalScoreClamped, confidence,
     confidenceBand: classifyConfidenceBand(confidence),
-    tradeReadiness,
-    status,
+    tradeReadiness, status,
     grade: classifySignalTier(signalScoreClamped),
     tradable: tradeReadiness >= CONDITIONAL_READINESS_THRESHOLD,
-    why,
-    score: signalScoreClamped
+    why, score: signalScoreClamped
   };
 }
 
@@ -3760,9 +3397,7 @@ async function rankEvenOddCandidates(onStep) {
   return results;
 }
 
-function selectBestEvenOddPrediction(results) {
-  return results.length ? results[0] : null;
-}
+function selectBestEvenOddPrediction(results) { return results.length ? results[0] : null; }
 
 function armEvenOddPrediction(result, symbol) {
   eo.prediction = result;
@@ -3788,9 +3423,7 @@ function isEvenOddPredictionStillValid() {
 }
 
 function invalidateEvenOddPrediction(reason) {
-  eo.prediction = null;
-  eo.state = "NONE";
-  eo.signalTickIndex = null;
+  eo.prediction = null; eo.state = "NONE"; eo.signalTickIndex = null;
 }
 function expireEvenOddPrediction() { invalidateEvenOddPrediction("expired"); }
 function updateEvenOddPrediction() { isEvenOddPredictionStillValid(); }
@@ -3955,10 +3588,7 @@ async function connectDemoTradingSocket() {
   demoTradingWebSocket.onclose = () => {
     demoTradingReady = false;
     accountConnected = false;
-    if (manualDisconnect) {
-      setSystemStatus("DISCONNECTED", "offline");
-      return;
-    }
+    if (manualDisconnect) { setSystemStatus("DISCONNECTED", "offline"); return; }
     setSystemStatus("RECONNECTING", "warning");
     showMessage("WebSocket connection lost. Reconnecting...", "error");
     clearTimeout(demoReconnectTimer);
@@ -3967,9 +3597,7 @@ async function connectDemoTradingSocket() {
     }, 3000);
   };
 
-  demoTradingWebSocket.onerror = () => {
-    if (demoTradingWebSocket) demoTradingWebSocket.close();
-  };
+  demoTradingWebSocket.onerror = () => { if (demoTradingWebSocket) demoTradingWebSocket.close(); };
 }
 
 function handleDemoMessage(raw) {
@@ -3982,10 +3610,7 @@ function handleDemoMessage(raw) {
 }
 
 function handleTradeError(data) {
-  if (!activeContract) {
-    showMessage(data.error?.message || "Request failed.", "error");
-    return;
-  }
+  if (!activeContract) { showMessage(data.error?.message || "Request failed.", "error"); return; }
   const trade = trades.find(t => t.id === activeContract.tradeId);
   const legCtx = activeContract.legs.find(l =>
     !l.contractId && (l.proposalReqId === data.req_id || l.buyReqId === data.req_id)
@@ -4070,9 +3695,9 @@ function openPublicWebSocket() {
 
     // ═══════════════════════════════════════════════════════════
     // CRITICAL: Preload 1000-tick history for ALL markets the
-    // moment the public feed opens. This ensures the D circles
-    // always show the exact same distribution as the Deriv website
-    // — never a "building from scratch" state.
+    // moment the public feed opens. Sequenced + retried so the
+    // public endpoint is never overwhelmed. The D circles will not
+    // display any percentages until each market's buffer is full.
     // ═══════════════════════════════════════════════════════════
     preloadAllMarketHistories();
   };
@@ -4088,21 +3713,16 @@ function openPublicWebSocket() {
     clearTimeout(publicReconnectTimer);
     publicReconnectTimer = setTimeout(() => {
       openPublicWebSocket();
-      // On reconnect, top up any thin buffers so the D circles
-      // are never left showing a partial distribution.
-      ensureAllHistoriesComplete();
     }, 3000);
   };
 
-  publicWebSocket.onerror = () => {
-    if (publicWebSocket) publicWebSocket.close();
-  };
+  publicWebSocket.onerror = () => { if (publicWebSocket) publicWebSocket.close(); };
 }
 
 function processTick(tickData) {
   const state = marketState[tickData.symbol];
   if (!state) return;
-  
+
   const q = getFinalDigit(tickData.quote, state.decimals);
   if (!q) return;
 
@@ -4118,12 +3738,20 @@ function processTick(tickData) {
   state.digits10.push(Number(q.finalDigit));
   if (state.digits10.length > 10) state.digits10.shift();
 
-  // Append the live tick to the rolling 1000-tick buffer. Since the
-  // buffer was preloaded with exactly 1000 real ticks from Deriv's
-  // history endpoint, this keeps it at exactly 1000 and the D-circle
-  // percentages stay identical to the Deriv website in real time.
-  state.digits1000.push(Number(q.finalDigit));
-  if (state.digits1000.length > 1000) state.digits1000.shift();
+  // ═══════════════════════════════════════════════════════════
+  // ROLLING BUFFER GUARD
+  // Only append live ticks to digits1000 AFTER the history load
+  // has filled the buffer to (approximately) 1000. Before that,
+  // the buffer is a partial distribution and must not be shown —
+  // so we still track the tick internally (state.tickCount) but
+  // skip appending it to digits1000 until the history primer is
+  // done. This is what guarantees the "25 / 1000" state shown in
+  // the D circles can never be trusted as a real distribution.
+  // ═══════════════════════════════════════════════════════════
+  if (isMarketHistoryReady(tickData.symbol)) {
+    state.digits1000.push(Number(q.finalDigit));
+    if (state.digits1000.length > 1000) state.digits1000.shift();
+  }
 
   if (tickData.symbol === currentFocusMarket) {
     renderFocusMarket(tickData.symbol);
@@ -4133,14 +3761,13 @@ function processTick(tickData) {
   ticksReceived.textContent = totalTicks;
 
   if (!engineRunning || activeContract) return;
+  if (!isMarketHistoryReady(tickData.symbol)) return;   // never evaluate a market with an incomplete distribution
 
   const strategy = strategySelect ? strategySelect.value : "triple-differ";
   if (strategy === "triple-differ") {
     evaluateTripleDiffer(tickData.symbol, q);
   } else if (strategy === "missing-digit-differ") {
-    if (tickData.symbol === STRATEGY2_MARKET) {
-      evaluateMissingDigitDiffer(tickData.symbol, q, prevWindow10);
-    }
+    if (tickData.symbol === STRATEGY2_MARKET) evaluateMissingDigitDiffer(tickData.symbol, q, prevWindow10);
   } else if (strategy === "over-under-pressure") {
     evaluateOverUnderPressure();
   } else if (strategy === "hedging-fund") {
@@ -4176,9 +3803,7 @@ function evaluateTripleDiffer(symbol, q) {
     state.watchCount++;
     if (state.watchCount >= 2) {
       const digit = state.watchDigit;
-      state.watching = false;
-      state.watchDigit = null;
-      state.watchCount = 0;
+      state.watching = false; state.watchDigit = null; state.watchCount = 0;
       createSignal(symbol, {
         strategyLabel: "TRIPLE DIGIT DIFFER",
         patternLabel: `${digit}${digit}${digit}`,
@@ -4216,8 +3841,7 @@ function evaluateMissingDigitDiffer(symbol, q, prevWindow10) {
   const digitNum = Number(q.finalDigit);
   if (state.watching) {
     const missingDigit = state.watchDigit;
-    state.watching = false;
-    state.watchDigit = null;
+    state.watching = false; state.watchDigit = null;
     if (digitNum === missingDigit) {
       releaseWatch(symbol, `${symbol}: missing digit ${missingDigit} repeated on the confirmation tick — no signal. Resuming scan.`);
     } else {
@@ -4261,23 +3885,19 @@ const OU_MIN_CONSENSUS = 60;
 
 function evaluateOverUnderPressure() {
   if (globalLock) return;
-  const eligibleMarkets = MARKETS.filter(m => marketState[m.symbol].digits10.length === 10);
+  const eligibleMarkets = MARKETS.filter(m => marketState[m.symbol].digits10.length === 10 && isMarketHistoryReady(m.symbol));
   if (!eligibleMarkets.length) return;
 
   let best = null;
   OU_PROFILES.forEach(profile => {
     let supportingMarkets = 0;
-    let bestMarketSymbol = null;
-    let bestMarketPct = -1;
+    let bestMarketSymbol = null, bestMarketPct = -1;
     eligibleMarkets.forEach(m => {
       const digits = marketState[m.symbol].digits10;
       const qualifyingCount = digits.filter(profile.qualifies).length;
       const pressurePct = (qualifyingCount / 10) * 100;
       if (pressurePct > 50) supportingMarkets++;
-      if (pressurePct > bestMarketPct) {
-        bestMarketPct = pressurePct;
-        bestMarketSymbol = m.symbol;
-      }
+      if (pressurePct > bestMarketPct) { bestMarketPct = pressurePct; bestMarketSymbol = m.symbol; }
     });
     const consensusPct = (supportingMarkets / eligibleMarkets.length) * 100;
     if (consensusPct < OU_MIN_CONSENSUS) return;
@@ -4329,6 +3949,7 @@ function evaluateEvenOddSweep() {
   MARKETS.forEach(m => {
     const digits = marketState[m.symbol].digits10;
     if (digits.length < 10) return;
+    if (!isMarketHistoryReady(m.symbol)) return;
     const evenCount = digits.filter(d => d % 2 === 0).length;
     const evenPct = evenCount * 10;
     const oddPct = 100 - evenPct;
@@ -4338,20 +3959,14 @@ function evaluateEvenOddSweep() {
     if (pct >= 70) candidates.push({ symbol: m.symbol, side, pct });
   });
 
-  if (!candidates.length) {
-    s5Active = null;
-    return;
-  }
+  if (!candidates.length) { s5Active = null; return; }
   candidates.sort((a, b) => b.pct - a.pct);
   const strongest = candidates[0];
 
   if (s5Active) {
     const stillQualifies = candidates.find(c => c.symbol === s5Active.symbol);
-    if (!stillQualifies) {
-      s5Active = strongest;
-    } else if (strongest.symbol !== s5Active.symbol && (strongest.pct - s5Active.pct) >= 5) {
-      s5Active = strongest;
-    }
+    if (!stillQualifies) s5Active = strongest;
+    else if (strongest.symbol !== s5Active.symbol && (strongest.pct - s5Active.pct) >= 5) s5Active = strongest;
   } else {
     s5Active = strongest;
   }
@@ -4375,9 +3990,9 @@ function evaluateDigitPressureOver0(symbol, q) {
   const state = marketState[symbol];
   const digitNum = Number(q.finalDigit);
 
-  if (!state.historyPrimed || state.digits1000.length < 1000) {
+  if (!isMarketHistoryReady(symbol)) {
     trackerStatus.textContent = "LOADING";
-    trackerDescription.textContent = `${symbol}: building the 1000-tick baseline before the % gate can be trusted (${state.digits1000.length}/1000).`;
+    trackerDescription.textContent = `${symbol}: waiting for the 1000-tick baseline to finish loading (${state.digits1000.length}/1000).`;
     return;
   }
 
@@ -4415,6 +4030,7 @@ const STRATEGY7_MARKET = "1HZ75V";
 function evaluateColdDigitDiffer(symbol) {
   if (symbol !== STRATEGY7_MARKET) return;
   if (globalLock) return;
+  if (!isMarketHistoryReady(symbol)) return;
   const state = marketState[symbol];
   const window30 = state.digits1000.slice(-30);
 
@@ -4444,6 +4060,7 @@ const STRATEGY8_MARKET = "R_50";
 function evaluateUnder7SpikeReversion(symbol, q) {
   if (symbol !== STRATEGY8_MARKET) return;
   if (globalLock) return;
+  if (!isMarketHistoryReady(symbol)) return;
   const digitNum = Number(q.finalDigit);
 
   if (digitNum < 7) {
@@ -4474,8 +4091,7 @@ function computeDigitPercentages(symbol) {
 }
 
 function marketQualifiesOver0Scan(symbol) {
-  const state = marketState[symbol];
-  if (!state.historyPrimed || state.digits1000.length < 1000) return false;
+  if (!isMarketHistoryReady(symbol)) return false;
   const pct = computeDigitPercentages(symbol);
   return pct[0] < S9_GATE_MAX && pct[1] < S9_GATE_MAX && pct[2] < S9_GATE_MAX;
 }
@@ -4492,9 +4108,9 @@ function evaluateOver0DigitScan(symbol, q) {
   if (globalLock) return;
   const state = marketState[symbol];
 
-  if (!state.historyPrimed || state.digits1000.length < 1000) {
+  if (!isMarketHistoryReady(symbol)) {
     trackerStatus.textContent = "LOADING";
-    trackerDescription.textContent = `${symbol}: building the 1000-tick baseline before the % gate can be trusted (${state.digits1000.length}/1000).`;
+    trackerDescription.textContent = `${symbol}: waiting for the 1000-tick baseline to finish loading (${state.digits1000.length}/1000).`;
     return;
   }
 
@@ -4534,8 +4150,7 @@ function handleOver0DigitScanResult(trade) {
 
   if (!won) {
     if (s9.awaitingRecovery) {
-      s9.tradesInCycle = 0;
-      s9.awaitingRecovery = false;
+      s9.tradesInCycle = 0; s9.awaitingRecovery = false;
       trackerStatus.textContent = "STOPPED";
       trackerDescription.textContent = `${trade.symbol}: martingale recovery trade lost — engine stopped. Pick a new market when you're ready.`;
       if (engineRunning) stopEngine();
@@ -4546,8 +4161,7 @@ function handleOver0DigitScanResult(trade) {
   }
 
   if (s9.awaitingRecovery) {
-    s9.tradesInCycle = 0;
-    s9.awaitingRecovery = false;
+    s9.tradesInCycle = 0; s9.awaitingRecovery = false;
     trackerStatus.textContent = "STOPPED";
     trackerDescription.textContent = `${trade.symbol}: martingale recovery trade won — engine stopped. Pick a new market when you're ready.`;
     if (engineRunning) stopEngine();
@@ -4555,8 +4169,7 @@ function handleOver0DigitScanResult(trade) {
   }
 
   if (s9.tradesInCycle >= S9_TRADES_PER_CYCLE) {
-    s9.tradesInCycle = 0;
-    s9.awaitingRecovery = false;
+    s9.tradesInCycle = 0; s9.awaitingRecovery = false;
     trackerStatus.textContent = "STOPPED";
     trackerDescription.textContent = `${trade.symbol}: 3 successful trades complete — engine stopped. Pick a new market when you're ready.`;
     if (engineRunning) stopEngine();
@@ -4571,6 +4184,7 @@ function evaluateDifferDeviation(symbol) {
   }
   if (symbol !== svd.predictionMarket) return;
   if (globalLock) return;
+  if (!isMarketHistoryReady(symbol)) return;
 
   if (!s10.cycleStarted) {
     if (!isPredictionStillValid()) {
@@ -4601,8 +4215,7 @@ function handleDifferDeviationResult(trade) {
   if (trade.profit > 0) {
     s10.winsInCycle++;
     if (s10.winsInCycle >= 3) {
-      s10.winsInCycle = 0;
-      s10.cycleStarted = false;
+      s10.winsInCycle = 0; s10.cycleStarted = false;
       invalidatePrediction();
       trackerStatus.textContent = "STOPPED";
       trackerDescription.textContent = `${trade.symbol}: 3 wins reached — engine stopped. Go scan a new market.`;
@@ -4615,21 +4228,14 @@ function handleDifferDeviationResult(trade) {
   trackerDescription.textContent = `${trade.symbol}: loss — martingaling to $${mm.currentStake.toFixed(2)} and retrying on digit ${svd.predictedDigit} (${s10.winsInCycle}/3 wins so far).`;
 }
 
-const OU_TRADE_BARRIERS = {
-  OVER:  { primary: 0, recovery: 1 },
-  UNDER: { primary: 9, recovery: 8 }
-};
+const OU_TRADE_BARRIERS = { OVER: { primary: 0, recovery: 1 }, UNDER: { primary: 9, recovery: 8 } };
 
 function getOverUnderTradeLeg() {
   const side = ou.prediction.contractType === "DIGITUNDER" ? "UNDER" : "OVER";
   const barrier = s11.recovering ? OU_TRADE_BARRIERS[side].recovery : OU_TRADE_BARRIERS[side].primary;
-  return {
-    side,
-    barrier,
-    contractType: ou.prediction.contractType,
-    label: `${side} ${barrier}`
-  };
+  return { side, barrier, contractType: ou.prediction.contractType, label: `${side} ${barrier}` };
 }
+
 function evaluateOverUnderDeviation(symbol) {
   if (!ou.prediction) {
     trackerStatus.textContent = "WAITING";
@@ -4638,6 +4244,7 @@ function evaluateOverUnderDeviation(symbol) {
   }
   if (symbol !== ou.prediction.symbol) return;
   if (globalLock) return;
+  if (!isMarketHistoryReady(symbol)) return;
 
   if (!s11.cycleStarted) {
     if (!isOverUnderPredictionStillValid()) {
@@ -4672,8 +4279,7 @@ function handleOverUnderDeviationResult(trade) {
     s11.recovering = false;
     s11.winsInCycle++;
     if (s11.winsInCycle >= 3) {
-      s11.winsInCycle = 0;
-      s11.cycleStarted = false;
+      s11.winsInCycle = 0; s11.cycleStarted = false;
       invalidateOverUnderPrediction();
       trackerStatus.textContent = "STOPPED";
       trackerDescription.textContent = `${trade.symbol}: 3 wins reached — engine stopped. Go scan a new market.`;
@@ -4696,6 +4302,7 @@ function evaluateMatchDeviation(symbol) {
   }
   if (symbol !== mt.prediction.symbol) return;
   if (globalLock) return;
+  if (!isMarketHistoryReady(symbol)) return;
 
   if (!s12.cycleStarted) {
     if (!isMatchPredictionStillValid()) {
@@ -4744,6 +4351,7 @@ function evaluateEvenOddDeviation(symbol) {
   }
   if (symbol !== eo.prediction.symbol) return;
   if (globalLock) return;
+  if (!isMarketHistoryReady(symbol)) return;
 
   if (!s13.cycleStarted) {
     if (!isEvenOddPredictionStillValid()) {
@@ -4782,10 +4390,8 @@ function handleEvenOddDeviationResult(trade) {
 function releaseWatch(symbol, reason) {
   const state = marketState[symbol];
   if (state) {
-    state.watching = false;
-    state.watchDigit = null;
-    state.watchCount = 0;
-    state.candidate = false;
+    state.watching = false; state.watchDigit = null;
+    state.watchCount = 0; state.candidate = false;
   }
   globalLock = null;
   trackerStatus.textContent = "SCANNING";
@@ -4806,10 +4412,7 @@ function createSignal(symbol, opts) {
     contract_type: l.contract_type,
     barrier: (l.barrier === undefined || l.barrier === null) ? null : String(l.barrier),
     amount: Number(l.amount.toFixed(2)),
-    status: "PENDING",
-    contractId: null,
-    profit: 0,
-    result: null
+    status: "PENDING", contractId: null, profit: 0, result: null
   }));
 
   const totalStake = legs.reduce((s, l) => s + l.amount, 0);
@@ -4862,10 +4465,8 @@ function handleProposal(data) {
   if (!activeContract) return;
   const legCtx = activeContract.legs.find(l => l.proposalReqId === data.req_id);
   if (!legCtx) return;
-
   const buyReqId = getRequestId();
   legCtx.buyReqId = buyReqId;
-
   demoTradingWebSocket.send(JSON.stringify({
     buy: String(data.proposal.id), price: Number(data.proposal.ask_price), req_id: buyReqId
   }));
@@ -4875,7 +4476,6 @@ function handleBuy(data) {
   if (!activeContract) return;
   const legCtx = activeContract.legs.find(l => l.buyReqId === data.req_id);
   if (!legCtx) return;
-
   const trade = trades.find(t => t.id === activeContract.tradeId);
   if (!trade) return;
 
@@ -4899,7 +4499,6 @@ function handleContractUpdate(data) {
 
   const legCtx = activeContract.legs.find(l => l.contractId === contract.contract_id);
   if (!legCtx) return;
-
   const trade = trades.find(t => t.id === activeContract.tradeId);
   if (!trade) return;
   const leg = trade.legs[legCtx.legIndex];
@@ -4910,10 +4509,7 @@ function handleContractUpdate(data) {
     leg.result = leg.profit > 0 ? "WIN" : "LOSS";
 
     const allClosed = trade.legs.every(l => l.status === "CLOSED");
-    if (!allClosed) {
-      renderTradingChannel();
-      return;
-    }
+    if (!allClosed) { renderTradingChannel(); return; }
 
     clearTimeout(tradeWatchdogTimer);
     trade.profit = trade.legs.reduce((s, l) => s + l.profit, 0);
@@ -4933,7 +4529,6 @@ function handleContractUpdate(data) {
 
 function renderTradingChannel() {
   if (!trades.length) return;
-  
   let wins = 0, losses = 0, totalStake = 0, totalWin = 0, totalLoss = 0;
 
   tradingChannel.innerHTML = trades.slice().reverse().map(t => {
@@ -4973,23 +4568,26 @@ function resetMarketWatchState() {
   MARKETS.forEach(m => {
     const s = marketState[m.symbol];
     if (!s) return;
-    s.candidate = false;
-    s.watching = false;
-    s.watchDigit = null;
-    s.watchCount = 0;
+    s.candidate = false; s.watching = false;
+    s.watchDigit = null; s.watchCount = 0;
   });
   globalLock = null;
   s5Active = null;
-  s9.tradesInCycle = 0;
-  s9.awaitingRecovery = false;
-  s10.winsInCycle = 0;
-  s10.cycleStarted = false;
+  s9.tradesInCycle = 0; s9.awaitingRecovery = false;
+  s10.winsInCycle = 0; s10.cycleStarted = false;
   s11.recovering = false;
   s12.cycleStarted = false;
   s13.cycleStarted = false;
 }
 
 function startEngine() {
+  // Hard gate: refuse to start until every market's history is loaded.
+  const notReady = MARKETS.filter(m => !isMarketHistoryReady(m.symbol));
+  if (notReady.length) {
+    showMessage(`Engine cannot start — waiting for 1000-tick history: ${notReady.map(m => m.name).join(", ")}`, "error");
+    return;
+  }
+
   resetMarketWatchState();
   resetMMSession();
   mmStatusBanner.className = "mm-status-banner active";
@@ -5041,10 +4639,7 @@ connectBtn.addEventListener("click", connectAccount);
 accountSelect.addEventListener("change", async () => {
   updateSelectedAccount();
   if (!accountConnected) return;
-  if (engineRunning) {
-    showMessage("Stop the engine before switching accounts.", "error");
-    return;
-  }
+  if (engineRunning) { showMessage("Stop the engine before switching accounts.", "error"); return; }
   try {
     showMessage("Switching account...", "normal");
     manualDisconnect = true;
@@ -5066,13 +4661,8 @@ if (svdMarketList) svdMarketList.textContent = MARKETS.map(m => m.symbol).join("
 $("footerTime").textContent = new Date().toLocaleDateString();
 
 const mm = {
-  startingStake: 1,
-  multiplier: 2,
-  takeProfit: 10,
-  stopLoss: 10,
-  currentStake: 1,
-  totalProfit: 0,
-  totalLoss: 0
+  startingStake: 1, multiplier: 2, takeProfit: 10, stopLoss: 10,
+  currentStake: 1, totalProfit: 0, totalLoss: 0
 };
 
 const mmStartingStakeInput = $("mmStartingStake");
@@ -5268,13 +4858,8 @@ function fetchTicksHistoryPage(ws, symbol, startEpoch, endEpoch) {
 
     ws.addEventListener("message", handler);
     ws.send(JSON.stringify({
-      ticks_history: symbol,
-      start: startEpoch,
-      end: endEpoch,
-      style: "ticks",
-      count: 5000,
-      adjust_start_time: 1,
-      req_id: reqId
+      ticks_history: symbol, start: startEpoch, end: endEpoch,
+      style: "ticks", count: 5000, adjust_start_time: 1, req_id: reqId
     }));
   });
 }
@@ -5384,10 +4969,7 @@ function combineMarketResults(perMarketResults, minSamples) {
       const cell = combined[wd][h];
       if (cell.setups < minSamples) continue;
       periods.push({
-        hour: h,
-        setups: cell.setups,
-        differ: cell.differ,
-        same: cell.same,
+        hour: h, setups: cell.setups, differ: cell.differ, same: cell.same,
         markets: cell.markets,
         combinedPct: (cell.differ / cell.setups) * 100,
         avgPct: cell.marketPercents.reduce((a, b) => a + b, 0) / cell.marketPercents.length,
@@ -5467,11 +5049,7 @@ async function runHistoricalAnalysis() {
         const digitsWithTime = await fetchMarketHistory(ws, market, startEpoch, endEpoch, msg => {
           histProgress.textContent = msg;
         });
-
-        if (!digitsWithTime.length) {
-          throw new Error("No ticks returned for this range.");
-        }
-
+        if (!digitsWithTime.length) throw new Error("No ticks returned for this range.");
         totalTicksFetched += digitsWithTime.length;
         const analysis = analyzeMarketTicks(digitsWithTime);
         perMarketResults.push({ symbol: market.symbol, name: market.name, ...analysis });
@@ -5578,6 +5156,15 @@ function handleLogout() {
   accounts = [];
   window.NDEBE_AUTH = null;
 
+  // Also reset the history preload flags so on next login the markets
+  // are re-primed from Deriv's history endpoint again.
+  historyPreloadRunning = false;
+  historyPreloadAllDone = false;
+  MARKETS.forEach(m => {
+    const s = marketState[m.symbol];
+    if (s) { s.digits1000 = []; s.historyPrimed = false; }
+  });
+
   patInput.value = "";
   accountSelect.innerHTML = '<option>No Account Linked</option>';
   accountSelect.disabled = true;
@@ -5596,6 +5183,9 @@ function handleLogout() {
 
 if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
 
+/* ============================================================
+   PROFIT PLANNER
+   ============================================================ */
 const PP_SESSION_PROFITS = {
   1: [1.00, 1.10, 1.21, 1.33, 1.46, 1.61, 1.77, 1.95, 2.14, 2.36, 2.59, 2.85, 3.14, 3.45, 3.80, 4.18, 4.59, 5.05, 5.56, 6.12, 6.73, 7.40, 8.14, 8.95, 9.85, 10.83, 11.92, 13.11, 14.42, 15.86],
   2: [5.00, 5.50, 6.05, 6.66, 7.32, 8.05, 8.86, 9.74, 10.72, 11.79, 12.97, 14.27, 15.69, 17.26, 18.99, 20.89, 22.97, 25.27, 27.80, 30.58, 33.64, 37.00, 40.70, 44.77, 49.25, 54.17, 59.59, 65.55, 72.10, 79.32],
@@ -5631,7 +5221,6 @@ function ppLoadState() {
     const saved = localStorage.getItem(PP_STORAGE_KEY);
     if (!saved) return false;
     const parsed = JSON.parse(saved);
-
     if (parsed && parsed.parts) {
       ppState.activePart = parsed.activePart || 1;
       [1, 2, 3, 4].forEach(part => {
@@ -5643,10 +5232,8 @@ function ppLoadState() {
     } else if (parsed && parsed.part) {
       ppState.activePart = parsed.part;
       ppState.parts[parsed.part] = {
-        balance: parsed.balance,
-        currentSession: parsed.currentSession,
-        completedSessions: parsed.completedSessions || [],
-        history: parsed.history || []
+        balance: parsed.balance, currentSession: parsed.currentSession,
+        completedSessions: parsed.completedSessions || [], history: parsed.history || []
       };
     }
     return true;
@@ -5735,10 +5322,7 @@ function ppCompleteSession() {
 
   partState.completedSessions.push(currentSession);
   partState.history.push({
-    session: currentSession,
-    part,
-    profit,
-    stake,
+    session: currentSession, part, profit, stake,
     balanceBefore: partState.balance,
     balanceAfter: partState.balance + profit,
     timestamp: Date.now()
